@@ -2,11 +2,14 @@ name: Deploy docs to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - feat/docs-pages
     paths:
       - 'docs/**'
       - '.github/workflows/deploy-docs.yml'
       - 'README.md'
+  workflow_dispatch: {}
 
 permissions:
   contents: read
