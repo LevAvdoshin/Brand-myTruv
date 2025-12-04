@@ -201,30 +201,7 @@ Quick map of all core files with why they exist.
   - Make sure updates are consistent across:
     - `brand.md` ↔ `positioning.md` ↔ `messaging.md`.
 
-### 4.3 Ownership
-
-*(Fill in concrete names as you see fit.)*
-
-- **Primary owner (brand system):**
-  - Role: Brand / Marketing Lead (or Founder until that exists).
-  - Responsible for:
-    - Keeping the system coherent.
-    - Approving major changes.
-    - Ensuring product & marketing use the same story.
-
-- **Co‑owners:**
-  - **Product Lead / PM:**  
-    Ensures positioning & personas reflect actual product and roadmap.
-  - **Design Lead:**  
-    Ensures UX & visual design align with brand essence and tone.
-  - **Content / Growth / SEO Lead:**  
-    Uses and maintains `messaging.md` and `seo.md` in practice.
-
-- **Everyone else:**
-  - Can **suggest changes** (via PRs/comments).
-  - Should **consult these docs** before creating user‑facing work.
-
-### 4.4 Versioning
+### 4.3 Versioning
 
 To keep changes transparent and reversible:
 
