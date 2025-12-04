@@ -30,6 +30,7 @@ If you’re unsure where to look or how to talk about myTruv, you start here.
 
 - In VS Code, hit `Cmd+Shift+V` (or click “Open Preview”).  
 - The preview uses `assets/brand-preview.css` (auto-wired via `.vscode/settings.json`) so the guides look like a polished brand site.
+- Need a shareable web view? Open `docs/index.html` (or GitHub Pages for this repo) to browse all Markdown guides with the same styling.
 
 ---
 

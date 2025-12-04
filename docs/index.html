@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>myTruv Brand System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <div class="bg-glow bg-glow-3"></div>
+  <div class="page">
+    <header class="hero">
+      <div class="eyebrow">Brand Source of Truth</div>
+      <div class="hero-top">
+        <h1>myTruv Brand System</h1>
+        <div class="hero-actions">
+          <a class="chip" href="https://github.com/levavdoshin-max/Truv-Lev-Tests" target="_blank" rel="noreferrer">
+            View repo
+          </a>
+          <span class="chip muted">Live Markdown → HTML</span>
+        </div>
+      </div>
+      <p class="lede">
+        Browse the brand, positioning, messaging, personas and SEO guides in a polished view.
+        The content streams directly from the Markdown files so the site stays in sync with the docs.
+      </p>
+      <div class="hero-buttons">
+        <button class="primary" data-doc="brand">Open brand guide</button>
+        <button class="ghost" data-doc="messaging">Jump to messaging</button>
+      </div>
+    </header>
+
+    <section class="layout">
+      <aside class="panel sidebar">
+        <div class="sidebar-header">
+          <div>
+            <p class="eyebrow">Docs</p>
+            <h2>Everything in one calm view</h2>
+          </div>
+          <p class="note">Select a doc to render the latest Markdown.</p>
+        </div>
+        <div class="doc-list" id="doc-list"></div>
+      </aside>
+
+      <main class="panel content">
+        <div class="content-header">
+          <div>
+            <p class="eyebrow">Live preview</p>
+            <h2 id="doc-title">Brand guide</h2>
+            <p class="note" id="doc-desc">Essence, promise, feelings, and how we show up.</p>
+          </div>
+          <div class="content-actions">
+            <a class="chip" id="open-github" href="#" target="_blank" rel="noreferrer">Open on GitHub</a>
+            <button class="chip muted" id="refresh-doc">Refresh</button>
+          </div>
+        </div>
+        <article id="doc-root" class="doc-body">
+          <div class="loading">
+            <div class="spinner"></div>
+            <p>Loading the brand guide…</p>
+          </div>
+        </article>
+      </main>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
