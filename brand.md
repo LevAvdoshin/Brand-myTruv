@@ -124,11 +124,28 @@ Brand response:
 
 ## 3. Positioning & Promise
 
-### 3.1 Positioning Statement
+### 3.1 What opening myTruv should feel like
 
-For **middle‑income, hyper‑online adults** who feel exhausted by money,  
-**myTruv** is a **financial behavior autopilot** that keeps your money system on track with **simple, low‑effort actions** — even when your income and expenses fluctuate —  
-unlike bank apps and budgeting tools that just show you charts and expect you to act like your own accountant.
+**Scenario: user hasn’t checked finances for a while.**
+
+- They tap the icon with a bit of nervousness.
+- The first screen they see is:
+  - their **Truv Score** (calm, not spiky),
+  - a short, kind summary:
+    - “You’re roughly on track. A bit more on X, a bit less on Y.”
+  - 1–3 insights, one of which is **clearly positive**.
+
+It might sound like:
+
+- “Hey, good news: even with your Vegas weekend, your overall cushions are still okay.”
+- “Delivery has gone up, but you reduced other extras. Net‑net, you’re fine.”
+- “You handled those surprise bills without touching your last line of defense. That matters.”
+
+Not:
+
+- “You blew your budget.”
+- “You failed your streak.”
+- “You’re behind.”
 
 ### 3.2 Core Promise (JTBD)
 
