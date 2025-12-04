@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --bg: #f7f9fc;
   --panel: #ffffff;
@@ -244,6 +248,56 @@ button {
   padding: 22px 24px;
 }
 
+.section-menu {
+  margin: 12px 0 16px;
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #f8fafc;
+  display: grid;
+  gap: 10px;
+}
+
+.section-menu .section-menu-header h3 {
+  margin: 2px 0 0;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+
+.section-menu .items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.section-menu .item {
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 13px;
+  color: #1f2937;
+  cursor: pointer;
+  transition: border-color 0.12s ease, color 0.12s ease, background 0.12s ease, transform 0.08s ease;
+}
+
+.section-menu .item:hover {
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+.section-menu .item.active {
+  border-color: var(--accent);
+  background: #eef2fb;
+  color: var(--accent-2);
+}
+
+.section-menu .item.level-3 {
+  padding-left: 16px;
+  font-size: 12px;
+  color: #4b5563;
+}
+
 .doc-body {
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -366,6 +420,10 @@ button {
 @media (max-width: 1024px) {
   .layout {
     grid-template-columns: 1fr;
+  }
+
+  .section-menu .items {
+    flex-direction: column;
   }
 }
 
