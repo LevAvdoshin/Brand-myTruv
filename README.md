@@ -11,7 +11,7 @@
 This is the **entry point** for the myTruv brand system — a **map of maps**.  
 Start here to understand how all brand docs fit together and how to use them.
 
-Research: https://app.lyssna.com/tests/dlhfyzcl2w1c/results/cho7i0h9lmbl
+Research (Paint Points): https://app.lyssna.com/tests/dlhfyzcl2w1c/results/cho7i0h9lmbl
 
 ---
 
