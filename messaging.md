@@ -2,7 +2,7 @@
 
 # myTruv — Messaging (No‑Hustle AI Autopilot & One‑Score)
 
-## 0. Purpose
+## 0. Purpose 🎯
 
 This file translates the **brand + positioning** into **actual words**:
 - how we describe myTruv,
@@ -19,13 +19,13 @@ Use this as the starting point for:
 
 ---
 
-## 1. Core One‑liners
+## 1. Core One‑liners ✍️
 
-### Primary
+### Primary ⭐
 
 > **“AI‑powered, no‑hustle financial autopilot: one calm score, one scroll, and a couple of simple steps to keep your money on track — even when income is messy.”**
 
-### Alternates
+### Alternates 🔄
 
 > **“An AI money companion: one score, one scroll, and always worth opening.”**
 

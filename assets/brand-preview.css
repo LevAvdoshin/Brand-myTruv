@@ -1,0 +1,168 @@
+/* VS Code Markdown preview styling for myTruv brand docs */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap");
+
+:root {
+  --bg: #0b1224;
+  --panel: #0f172a;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #7dd3fc;
+  --accent-2: #a5b4fc;
+  --border: #1e293b;
+  --code-bg: #111827;
+  --radius: 10px;
+  --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+body {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  background: radial-gradient(circle at 10% 20%, rgba(125, 211, 252, 0.08), transparent 25%),
+    radial-gradient(circle at 90% 10%, rgba(165, 180, 252, 0.08), transparent 24%),
+    radial-gradient(circle at 80% 80%, rgba(94, 234, 212, 0.06), transparent 26%),
+    var(--bg);
+  color: var(--text);
+  padding: 52px 32px 80px;
+  max-width: 860px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+main {
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(11, 17, 33, 0.9));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 36px 42px 48px;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: #bae6fd;
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Space Grotesk", "Inter", "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.01em;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 36px;
+  color: var(--accent);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 14px;
+}
+
+h2 {
+  font-size: 28px;
+  color: var(--accent-2);
+}
+
+h3 {
+  font-size: 22px;
+  color: #c7d2fe;
+}
+
+h4 {
+  font-size: 18px;
+  color: var(--text);
+}
+
+p {
+  margin: 12px 0;
+  color: var(--text);
+}
+
+strong {
+  color: #f8fafc;
+}
+
+em {
+  color: #e5e7eb;
+}
+
+ul,
+ol {
+  margin: 10px 0 10px 22px;
+}
+
+li {
+  margin: 6px 0;
+}
+
+blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 8px 16px;
+  color: #cbd5e1;
+  background: rgba(125, 211, 252, 0.06);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+code {
+  background: var(--code-bg);
+  color: #e0f2fe;
+  padding: 3px 7px;
+  border-radius: 8px;
+  font-size: 0.95em;
+}
+
+pre code {
+  display: block;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 18px 0;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+th,
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  text-align: left;
+  color: #cbd5e1;
+  background: rgba(125, 211, 252, 0.08);
+}
+
+tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 28px 0;
+}
+
+img {
+  max-width: 100%;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Callout style for front-matter comments */
+[data-line] {
+  scroll-margin-top: 64px;
+}

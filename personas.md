@@ -2,7 +2,7 @@
 
 # myTruv — Personas (No‑Hustle AI Companion)
 
-## 0. Purpose
+## 0. Purpose 🎯
 
 myTruv is **not** only for one demographic.  
 Different people meet us with different pains.
@@ -20,7 +20,7 @@ Use it for:
 
 ---
 
-## 1. Shared Traits Across Personas
+## 1. Shared Traits Across Personas 🤝
 
 Regardless of age / income, most people who will love myTruv:
 

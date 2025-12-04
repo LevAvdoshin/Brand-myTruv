@@ -2,7 +2,7 @@
 
 # myTruv – Brand Guide
 
-## 0. Purpose
+## 0. Purpose 🎯
 
 This guide defines **who myTruv is as a brand**:
 
@@ -22,9 +22,9 @@ Use this file to:
 
 ---
 
-## 1. Brand Essence
+## 1. Brand Essence ✨
 
-### 1.1 Brand idea
+### 1.1 Brand idea 💡
 
 > **“Light, kind money – on AI autopilot.”**
 
@@ -52,7 +52,7 @@ More like “you have a small, kind financial brain in your pocket”.
 
 ---
 
-### 1.2 What we exist to change
+### 1.2 What we exist to change 🔄
 
 Right now, money management feels like this for a lot of people:
 
@@ -83,7 +83,7 @@ myTruv flips this pattern:
 
 ---
 
-### 1.3 Non‑negotiable feelings
+### 1.3 Non‑negotiable feelings ❤️
 
 Every interaction with myTruv should land like this:
 

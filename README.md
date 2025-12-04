@@ -26,6 +26,11 @@ This file exists to:
 
 If you’re unsure where to look or how to talk about myTruv, you start here.
 
+### Quick viewing tip
+
+- In VS Code, hit `Cmd+Shift+V` (or click “Open Preview”).  
+- The preview uses `assets/brand-preview.css` (auto-wired via `.vscode/settings.json`) so the guides look like a polished brand site.
+
 ---
 
 ## 2. How to Use This System 🧭

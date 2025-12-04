@@ -1,0 +1,4 @@
+{
+  "markdown.styles": ["./assets/brand-preview.css"],
+  "markdown.preview.breaks": false
+}

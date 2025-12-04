@@ -2,7 +2,7 @@
 
 # myTruv — Positioning (No‑Hustle AI Autopilot & One Score)
 
-## 1. Positioning Statement
+## 1. Positioning Statement 🎯
 
 For people who are tired of spreadsheets, budgeting apps and feeling guilty about money —  
 whether they’re students, parents, freelancers or high earners,  
@@ -18,14 +18,14 @@ without turning your finances into a second job or a daily performance game.
 
 ---
 
-## 2. Category
+## 2. Category 🗂️
 
 - External: **personal finance / money health app**
 - Internal: **“AI money companion & financial behavior autopilot with a no‑hustle wellbeing score”**
 
 ---
 
-## 3. What We Stand Against
+## 3. What We Stand Against 🚫
 
 1. **Heavy budgeting & manual work**
    - “Track every dollar.”
