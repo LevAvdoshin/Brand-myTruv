@@ -51,7 +51,6 @@ const docList = document.getElementById("doc-list");
 const docRoot = document.getElementById("doc-root");
 const docTitle = document.getElementById("doc-title");
 const docDesc = document.getElementById("doc-desc");
-const openGithub = document.getElementById("open-github");
 const refreshButton = document.getElementById("refresh-doc");
 const heroButtons = document.querySelectorAll("[data-doc]");
 const sectionMenu = document.getElementById("section-menu");
@@ -83,7 +82,6 @@ function renderDocList() {
 function setHeader(doc) {
   docTitle.textContent = doc.title;
   docDesc.textContent = doc.description;
-  openGithub.href = `https://github.com/${repo}/blob/${branch}/${doc.file}`;
 }
 
 function setLoading(message) {
