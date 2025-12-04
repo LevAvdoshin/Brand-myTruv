@@ -110,7 +110,7 @@ Value in **one glance, one scroll**.
 
 
 - We turn your money into **clear stories**, not just pie charts:
-  - “Your Spain vacation cost X and is why this month looks different.”
+  - “Your long weekend in Vegas cost X and is why this month looks different.”
   - “Housing and food are stable; the variance sits in eating out and delivery.”
   - “This one‑off bill made this month spike — your long‑term pattern is still okay.”
 - Every “weird month” is explained in **plain language**, with a clear price tag and context.
