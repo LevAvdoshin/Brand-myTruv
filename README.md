@@ -1,12 +1,12 @@
-> **TL;DR for leadership**
-> - myTruv = AI‑powered, no‑hustle money companion.
-> - Promise = one calm score, one scroll, always worth opening, no shame.
-> - Not a budgeting app. Works on top of bank apps & cards, especially with messy/irregular income.
-> - Brand tone = light, kind, validating; always gives either reassurance or a small useful action.
-
-<!-- overview.md -->
+<!-- README.md / overview.md -->
 
 # myTruv — Brand System Overview
+
+> **Leadership TL;DR**
+> - **What it is:** myTruv is an AI‑powered, no‑hustle money companion — not a classic budgeting app.
+> - **Core promise:** one calm score, one simple screen, and a few gentle insights; always worth opening, never shaming.
+> - **How it works:** sits on top of all your bank accounts and cards, understands your real‑life patterns (even with messy, fluctuating income) and runs the “money brain” in the background.
+> - **Brand tone:** light, kind, validating and practical — every touchpoint gives either reassurance (“you’re okay”) or one low‑effort next step.
 
 This is the **entry point** for the myTruv brand system — a **map of maps**.  
 Start here to understand how all brand docs fit together and how to use them.
@@ -18,11 +18,11 @@ Start here to understand how all brand docs fit together and how to use them.
 This file exists to:
 
 - Give everyone a **shared mental model** of the myTruv brand:
-  - **Who we are:** a no‑hustle financial behavior autopilot  
+  - **Who we are:** an AI‑powered, no‑hustle financial behavior autopilot  
     → one score, one scroll, calm guidance — even with messy, fluctuating income.
-  - **Who we’re for:** middle‑income, hyper‑online US adults (30–40) who feel money is chaos, guilt and fatigue despite already using bank apps, spreadsheets and budgeting tools.
+  - **What we solve:** money that feels heavy, chaotic and guilt‑inducing, even for people who already use bank apps, spreadsheets and budgeting tools.
 - Explain **what each brand doc is for** and **when to use which**.
-- Act as the **source‑of‑truth index** for all brand, positioning, messaging and SEO decisions.
+- Act as the **source‑of‑truth index** for all brand, positioning, messaging, personas and SEO decisions.
 
 If you’re unsure where to look or how to talk about myTruv, you start here.
 
@@ -54,18 +54,18 @@ Use it like this:
 
 4. **Use `personas.md` when you need to choose a target or tone**  
    - For campaigns, features, emails, flows.
-   - It helps you pick **who you’re talking to** (Exhausted Power User, Emotional iOS Spender, Self‑Employed with chaotic income, etc.) and adjust nuance.
+   - It helps you pick **who you’re talking to** (Exhausted Power User, Emotional iOS Spender, Self‑Employed with chaotic income, students, high earners, etc.) and adjust nuance.
 
 5. **Use `seo.md` for search & content**  
    - For blog topics, landing pages, and keyword strategy.
-   - It makes sure our **no‑hustle, one‑score, autopilot** story shows up where people are actually searching.
+   - It makes sure our **no‑hustle, one‑score, AI‑autopilot** story shows up where people are actually searching.
 
 Whenever you’re stuck:
 
-- **What are we?** → `brand.md`
-- **How are we different?** → `positioning.md`
-- **What exactly should we say?** → `messaging.md`
-- **Who am I talking to?** → `personas.md`
+- **What are we?** → `brand.md`  
+- **How are we different?** → `positioning.md`  
+- **What exactly should we say?** → `messaging.md`  
+- **Who am I talking to?** → `personas.md`  
 - **How do they discover us?** → `seo.md`
 
 ---
@@ -74,22 +74,21 @@ Whenever you’re stuck:
 
 Quick map of all core files with why they exist.
 
-| File          | What it covers                     | Use it when...                    |
-| ------------- | ----------------------------------- | --------------------------------- |
-| brand.md      | Essence, values, feelings          | Big decisions, creative briefs    |
-| positioning.md| Market framing & differentiation    | Pitches, strategy, investor decks |
-| messaging.md  | Phrases, narratives, examples      | Writing copy                      |
-| personas.md   | Who we talk to                     | Targeting, tone                   |
-| seo.md        | Keywords, content angles, IA       | Blog & landing pages              |
-
+| File           | What it covers                     | Use it when…                       |
+| -------------- | ----------------------------------- | ---------------------------------- |
+| `brand.md`     | Essence, values, feelings          | Big decisions, creative briefs     |
+| `positioning.md` | Market framing & differentiation | Pitches, strategy, investor decks  |
+| `messaging.md` | Phrases, narratives, examples      | Writing copy                       |
+| `personas.md`  | Who we talk to                     | Targeting, tone                    |
+| `seo.md`       | Keywords, content angles, IA       | Blog & landing pages               |
 
 ### 3.1 Brand
 
 - **`brand.md` — Brand Guide**
   - **What it is:** The core definition of myTruv’s identity.
   - **What’s inside:**
-    - Brand essence: no‑hustle financial behavior autopilot for messy real life.
-    - Who we’re for: middle‑income, hyper‑online, mentally overloaded adults.
+    - Brand essence: AI‑powered, no‑hustle money companion for messy real life.
+    - Feelings we want to create: light, kind, always worth opening, never shaming.
     - Value prop, emotional hook, high‑level copy examples, tone & personality.
   - **Use when:**
     - Making big product or marketing decisions.
@@ -102,8 +101,8 @@ Quick map of all core files with why they exist.
   - **What it is:** How we frame myTruv in the market and in people’s heads.
   - **What’s inside:**
     - Positioning statement.
-    - What we stand against (heavy budgeting, guilt‑driven gamification, dashboards overload).
-    - How we’re different: one score, one scroll, calm explanations, behavior autopilot, fluctuating‑income‑friendly.
+    - What we stand against (heavy budgeting, guilt‑driven gamification, dashboard overload).
+    - How we’re different: one score, one scroll, calm explanations, AI behavior autopilot, works with fluctuating income.
     - Functional + emotional benefits.
   - **Use when:**
     - Writing pitches, decks, “What is myTruv?” explainers.
@@ -112,12 +111,12 @@ Quick map of all core files with why they exist.
 
 ### 3.3 Messaging
 
-- **`messaging.md` — Messaging (No‑Hustle Autopilot & One‑Score)**
+- **`messaging.md` — Messaging (No‑Hustle AI Autopilot & One‑Score)**
   - **What it is:** The **language layer**: concrete phrases, narratives, and examples.
   - **What’s inside:**
     - Core one‑liners and alternates.
     - Narrative from problem → insight → solution → outcome.
-    - JTBD‑based messages for low‑effort control, fluctuating income, anxiety, impulsive spending.
+    - JTBD‑based messages for low‑effort control, fluctuating income, anxiety, impulsive spending, life events (trips, moves, repairs, bills).
     - “What we don’t say” and safer alternatives.
   - **Use when:**
     - Writing homepage, feature pages, emails, ads, app store copy.
@@ -126,19 +125,19 @@ Quick map of all core files with why they exist.
 
 ### 3.4 Personas
 
-- **`personas.md` — Personas (No‑Hustle Autopilot & One‑Score)**
-  - **What it is:** The main **audience types** derived from research.
+- **`personas.md` — Personas (No‑Hustle AI Companion)**
+  - **What it is:** The main **audience patterns** derived from research.
   - **What’s inside:**
-    - Exhausted Power User (Android/Windows, tools fatigue).
+    - Exhausted Power User (tool fatigue).
     - Emotional iOS Spender (guilt, avoidance, impulse).
     - Working Middle America (busy, wants quick check‑ins).
-    - Self‑Employed with Chaotic Income (lumpy cashflow, tax/cushion stress).
+    - Self‑Employed with Chaotic Income (lumpy cashflow, taxes).
     - Anxiety‑heavy “Some College” pattern (identity + shame).
     - What resonates / what to avoid for each.
   - **Use when:**
     - Choosing target segment for a feature, campaign, or landing page.
     - Adjusting copy tone and emphasis.
-    - Prioritizing which pain to solve first.
+    - Prioritising which pain to solve first.
 
 ### 3.5 SEO & Content
 
@@ -150,9 +149,9 @@ Quick map of all core files with why they exist.
       - financial wellbeing score,
       - irregular income,
       - money anxiety and guilt,
-      - trips & life stories,
+      - trips & life stories (Vegas, Cancun, Disney, moves, repairs),
       - alternatives to budgeting apps & gamified finance,
-      - quick check‑ins for busy, hyper‑online people.
+      - quick check‑ins for busy, online people.
     - Content ideas and site structure (home, product, use cases, comparisons, blog clusters).
     - Tone notes for SEO articles.
   - **Use when:**
@@ -166,36 +165,36 @@ Quick map of all core files with why they exist.
 
 ### 4.1 Source of Truth
 
-- This folder (`brand/` or equivalent) is the **single source of truth** for:
+- This repo is the **single source of truth** for:
   - Brand identity (who we are).
   - Positioning (how we’re different).
   - Messaging (what we say, what we avoid).
   - Personas (who we target).
   - SEO direction (how we’re discovered).
 - If there is a conflict between:
-  - **Slides / Notion / Figma / random docs** and these files → **these files win**.
-  - Internal hierarchy if there’s a clash:
-    1. `brand.md`
-    2. `positioning.md`
-    3. `messaging.md`
-    4. `personas.md`
-    5. `seo.md`
+  - **slides / Notion / Figma / random docs** and these files → **these files win**.
+- Internal hierarchy if there’s a clash:
+  1. `brand.md`
+  2. `positioning.md`
+  3. `messaging.md`
+  4. `personas.md`
+  5. `seo.md`
 
 ### 4.2 Updates Policy
 
 **When to update**
 
-- When **product reality shifts** (e.g. we add/remove a core concept like the score, autopilot logic, target segment).
-- When **data contradicts assumptions** (user research, quant, behavior).
+- When **product reality shifts** (e.g. we add/remove a core concept like the score, autopilot logic, target segments).
+- When **data contradicts assumptions** (user research, quant, behaviour).
 - When messaging is consistently **misunderstood** or attracts the wrong audience.
-- When **market context changes** (e.g. competitor acquisitions, Mint shutting down, etc.).
+- When **market context changes** (e.g. big competitor moves).
 
 **How to update**
 
 - Treat these docs like **code for the brand**:
   - Changes should be **intentional and documented**, not random edits.
   - Ideally:
-    - Propose changes in a PR / change request / tracked comments.
+    - Propose changes via PR / change request / tracked comments.
     - Include a short **changelog entry** at the top or bottom of the file.
 - For substantial changes:
   - Discuss with **brand/marketing + product** stakeholders.
@@ -214,12 +213,12 @@ Quick map of all core files with why they exist.
     - Ensuring product & marketing use the same story.
 
 - **Co‑owners:**
-  - **Product Lead / PM:**
-    - Ensures positioning & personas reflect actual product and roadmap.
-  - **Design Lead:**
-    - Ensures UX & visual design align with brand essence and tone.
-  - **Content / Growth / SEO Lead:**
-    - Uses and maintains `messaging.md` and `seo.md` in practice.
+  - **Product Lead / PM:**  
+    Ensures positioning & personas reflect actual product and roadmap.
+  - **Design Lead:**  
+    Ensures UX & visual design align with brand essence and tone.
+  - **Content / Growth / SEO Lead:**  
+    Uses and maintains `messaging.md` and `seo.md` in practice.
 
 - **Everyone else:**
   - Can **suggest changes** (via PRs/comments).
@@ -229,7 +228,7 @@ Quick map of all core files with why they exist.
 
 To keep changes transparent and reversible:
 
-- Each core file (`overview.md`, `brand.md`, `positioning.md`, `messaging.md`, `personas.md`, `seo.md`) should have:
+- Each core file (`README.md`, `brand.md`, `positioning.md`, `messaging.md`, `personas.md`, `seo.md`) should have:
 
   ```md
   Version: 0.3
