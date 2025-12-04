@@ -47,7 +47,7 @@ Alt:
 
 
 4. **Outcome**  
-   - “Okay, that’s how much the Spain trip cost. I can see how it affected my score, and what to tweak next. It’s fine. Life goes on.”  
+   - “Okay, that’s how much the trip cost. I can see how it affected my score, and what to tweak next. It’s fine. Life goes on.”  
    - You get **just enough clarity and guidance to relax**, not enough noise to be overwhelmed.
 
 
