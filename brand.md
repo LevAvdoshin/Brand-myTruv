@@ -1,124 +1,120 @@
+<!-- brand.md -->
+
 # myTruv – Brand Guide
 
-## 0. Brand TL;DR
+## 0. Purpose
 
-**Who we’re for**  
-Middle‑income, hyper‑online adults in the US (30–40, ~$50–80k household income) who:
-- Already use a bank app, spreadsheets and maybe Mint/YNAB/etc.
-- Spend 6+ hours online, are pretty tech‑savvy.
-- Feel that “doing money right” is a second job they’re too tired for.
+This guide defines **who myTruv is** as a brand:
 
-**What we promise**  
-A **financial behavior autopilot** that:
-- Works even with **fluctuating income and messy cashflow**.
-- Gives **simple, low‑effort control** instead of complicated budgets.
-- Reduces **guilt, chaos and overwhelm**, not just “tracks spending”.
+- what we stand for,
+- how we want people to feel,
+- what we promise (and what we refuse to do),
+- how we show up in product, design and words.
 
-**What makes us different**  
-myTruv **doesn’t turn you into your own accountant**.  
-It builds a simple system around your real life, then nudges you with **1–2 concrete steps at a time**, measured by **Truv Score** – a signal of how healthy your money system is, not how big your income is.
+It is **not** a detailed target‑audience doc — that lives in `personas.md`.  
+Here we focus on the **core idea and personality** that must stay true across all segments.
+
+Use this file to:
+
+- brief designers, writers, PMs, engineers, partners,
+- check if a feature / campaign / visual “feels like myTruv”,
+- onboard new people into the brand in 20–30 minutes.
 
 ---
 
 ## 1. Brand Essence
 
-### 1.1 Brand Idea
+### 1.1 Brand idea
 
-> **“Calm, low‑effort control over messy money.”**
+> **“Light, kind money — on AI autopilot.”**
 
-The world told you to “track every dollar” and “stick to a budget”.  
-Our insight: almost everyone in our target group already tried that — and still feels stressed.
+Most money tools say:
 
-**Essence:**  
-myTruv turns chaotic, guilt‑ridden money management into a **simple, supportive routine** that mostly runs on autopilot.
+- “Track every dollar.”
+- “Stick to your budget.”
+- “Be your own CFO.”
 
-### 1.2 Core Truths From the Research
+Reality: люди уже пробовали. Они ставили приложения, заводили таблички — и всё равно чувствуют:
 
-- **Almost everyone is already “doing something”**  
-  97–98% use **spreadsheets, bank apps, notes or budgeting apps**. The problem isn’t “no tools”. The problem is that all tools make the user the **bookkeeper**.
+- хаос,
+- вину,
+- усталость.
 
-- **Income level isn’t the real driver of stress**  
-  People between **$40–70k** and **$70–100k** feel almost equally anxious. More income slightly shifts from “panic” to “not great, but trying”, but doesn’t create calm.
+**Суть myTruv:**
 
-- **Heavy‑online & advanced users are tired, not clueless**  
-  65% are advanced tech users; 63% are online **6+ hours/day**. Many have tried multiple apps + Excel. They have **tool fatigue** and **cognitive overload**, not a lack of information.
+> myTruv превращает тяжёлые, хаотичные финансы  
+> в **простого, всегда-доброго AI‑товарища**,  
+> который сам следит за системой и даёт тебе  
+> один спокойный скор + пару мягких подсказок.
 
-- **Budgeting apps don’t fix emotions**  
-  Users of Mint / RocketMoney / YNAB / Monarch / etc. are **not noticeably calmer** than others. They still report:
-  - “Low‑effort control” as the biggest unmet need.
-  - Impulses, avoidance, fluctuating income.
-
-- **Shame and secrecy = maximum anxiety**  
-  The most stressed people **never admit overdrafts or overspend**. People who can openly discuss mistakes or salary are **much calmer**.  
-  → Our brand must be **shame‑free** and normalize “not being perfect”.
+Не “стань бухгалтером”.  
+А “у тебя есть свой маленький финансовый мозг в кармане”.
 
 ---
 
-## 2. Audience
+### 1.2 What we exist to change
 
-### 2.1 Primary Audience (Core Target)
+Сегодня деньги для большинства выглядят так:
 
-**Profile**
+- **Стыд.**  
+  Страшно открыть банк: “там всё плохо, я опять всё запорол”.
+- **Перегруз.**  
+  Таблицы, категории, бюджеты, правила, нотификации.
+- **Избегание.**  
+  Установил app → поигрался неделю → стало стыдно → удалил или просто перестал заходить.
 
-- **Location:** US  
-- **Age:** 30–40 (especially 30–35 and 36–40)
-- **Income:** $40–100k household (communication sweet spot: **$50–80k**)
-- **Status:** Full‑time employees + self‑employed (≈80% of sample)
-- **Tech:** Mostly **Advanced**, heavy‑online (6+ hours/day), comfortable connecting accounts.
-- **Tools today:**
-  - Bank app + spreadsheets for most.
-  - 30%+ have tried budgeting apps.
-  - Only ~4% feel “totally on top of it”.
+Наши задачи:
 
-**Emotional state**
+1. **Снять стыд за “плохие финансы”.**  
+   Открывать myTruv не должно быть страшно. Там **всегда** есть что‑то поддерживающее, не обвиняющее.
 
-- Feel that **money is “chaos + guilt + fatigue”**.
-- Believe “I *should* be doing more: planning, tracking, budgeting… but I’m exhausted.”
-- Especially:
-  - Self‑employed → **fluctuating income, constant monitoring, tax/cashflow anxiety**.
-  - Full‑time → “After work I don’t have the energy to be my own CFO.”
+2. **Убрать ощущение второй работы.**  
+   Пользователь не должен “делать финансы”. Он просто открывает app и получает картинку + пару next steps.
 
-### 2.2 Key Segments & Angles
+3. **Дать чувство “я не один в этом бардаке”.**  
+   Деньги — сложная система (housing, медицина, налоги, инфляция).  
+   myTruv признаёт это и помогает выжать максимум из того, что уже есть.
 
-We don’t always show these in marketing, but we design messaging with them in mind.
+---
 
-#### Self‑employed
+### 1.3 Non‑negotiable feelings
 
-- High tech proficiency, heavy tool usage.
-- Biggest problems: **fluctuating income**, constant monitoring, avoidance/guilt.
-- What they want:  
-  > “Take daily money micromanagement off my plate. Help me feel safe, even when months look different.”
+Когда человек думает о myTruv или открывает app, он должен чувствовать:
 
-#### Full‑time employees
+- **Добро пожаловать, а не “опять пришёл?”.**  
+  App рад каждому заходу, даже если ты месяц не появлялся.
 
-- Core mass segment.
-- Problems: low‑effort control, emotional fatigue, some impulsive spending and avoidance.
-- What they want:  
-  > “After work, I want to feel like an adult about money without becoming a finance nerd.”
+- **Меня понимают.**  
+  Система как будто “знает контекст”: доход, счета, привычки, мелкие хаос‑события.
 
-#### Heavy‑online advanced users (Android/Windows skew)
+- **Спокойствие, не паника.**  
+  “Я вижу, что происходит. Понимаю, нормально ли всё. Есть 1–2 действия, а не 100 задач.”
 
-- 6+ hours online, multiple tools, lots of experiment history.
-- Pain: **overwhelm**, tool fatigue, diminishing returns from new dashboards.
-- What they want:  
-  > “Not another dashboard. A smart layer that just tells me what to do next.”
+- **Поддержку, а не оценку.**  
+  “Ты в целом молодец, вот маленькая поправка” вместо “ты снова всё сделал неправильно”.
 
-#### Intermediate users (more iOS, 1–4h online)
+Если фича или копирайт даёт обратное — это **off‑brand**.
 
-- Less into complex UI, more into **clear, simple steps**.
-- Pain: impulsive spending, overwhelm, fluctuating income.
-- What they want:  
-  > “One simple score. One simple action. No jargon.”
+---
 
-#### Gender nuances
+## 2. Audience (Brand‑level)
 
-- All “very stressed” respondents are women.  
-  → We must be **extra careful with shame or judgment** in tone.
-- Women: more “I’m in a fire”; Men: more avoidance / “I’d rather not look”.
+myTruv **не** бренд “только для middle‑income 30–40”.  
+Продукт полезен:
 
-Brand response:
-- **For women:** emotional safety, no red sirens, a sense of being on their side.  
-- **For men:** remove friction and mental load; “We’ll watch it for you and ping you when it matters.”
+- студентам и людям в начале пути,
+- фуллтайм‑сотрудникам и “working middle America”,
+- фрилансерам и self‑employed с рваным доходом,
+- high earners, которые всё равно живут в хаосе.
+
+Общее между ними — **ощущение, а не демография**:
+
+- деньги = тяжело / стыдно / утомительно,
+- уже пробовали какие‑то инструменты,
+- хотят **простого, честного, низко‑эффортного контроля**.
+
+Детальная разбивка по сегментам и сценариям → в `personas.md`.  
+Важно: **бренд‑голос один для всех**: лёгкий, добрый, без шейминга.
 
 ---
 
@@ -126,156 +122,166 @@ Brand response:
 
 ### 3.1 What opening myTruv should feel like
 
-**Scenario: user hasn’t checked finances for a while.**
+**Сценарий:** человек давно не заходил в финансы, открывает app с лёгким страхом.
 
-- They tap the icon with a bit of nervousness.
-- The first screen they see is:
-  - their **Truv Score** (calm, not spiky),
-  - a short, kind summary:
-    - “You’re roughly on track. A bit more on X, a bit less on Y.”
-  - 1–3 insights, one of which is **clearly positive**.
+Он видит:
 
-It might sound like:
+- **Truv Score** — спокойный индикатор состояния системы, а не “оценка человека”.
+- Короткий, тёплый диагноз:
+  - “В целом ты в зелёной зоне.”
+  - “Этот месяц чуть тяжелее из‑за X, но подушка держит.”
+- 1–3 простых инсайта / действия — хотя бы один из них **позитивный**.
 
-- “Hey, good news: even with your Vegas weekend, your overall cushions are still okay.”
-- “Delivery has gone up, but you reduced other extras. Net‑net, you’re fine.”
-- “You handled those surprise bills without touching your last line of defense. That matters.”
+Это может звучать так:
 
-Not:
+- “Хорошая новость: даже после твоего Vegas‑weekend твоя подушка всё ещё в безопасной зоне.”
+- “Доставка в этом месяце выросла, но ты меньше тратил на другие развлечения — в сумме всё ок.”
+- “Ты закрыл медсчёт, не залезая в кредитку. Это большой плюс для твоей системы.”
 
-- “You blew your budget.”
-- “You failed your streak.”
-- “You’re behind.”
+И **точно не** так:
+
+- “Ты снова blew your budget.”
+- “Ты провалил streak.”
+- “Ты отстаёшь от целей.”
+
+---
 
 ### 3.2 Core Promise (JTBD)
 
-> **“Help me feel like my money is under control  
->  without complicated budgets, even when my cashflow is messy,  
->  and without constant shame or guilt.”**
+> **“Помоги мне чувствовать, что с деньгами всё под контролем,  
+>  без сложных бюджетов, даже если кэшфлоу хаотичный,  
+>  и без постоянного стыда и самобичевания.”**
+
+---
 
 ### 3.3 Brand Pillars
 
 1. **Low‑effort control**  
-   - You don’t need to build a perfect budget.
-   - You get **1–3 clear next steps**, not a long to‑do list.
+   - Не нужно собирать идеальный бюджет.
+   - App сам считает и подсвечивает, а пользователь видит **1–3 понятных шага**.
 
-2. **Designed for messy, fluctuating income**  
-   - Works when paychecks are irregular, gigs vary, or expenses spike.
-   - We **smooth the noise** and show a “steady state” picture.
+2. **Работает при хаотичном кэшфлоу**  
+   - Годы, фриланс, сменные графики, бонусы, простои — ок.
+   - myTruv сглаживает шум и показывает “нормальный режим vs опасный режим”.
 
-3. **Emotionally safe & shame‑free**  
-   - No red “YOU OVERSPENT” alarms.
-   - We acknowledge **systemic pressure** (inflation, housing, medical).
-   - We focus on **improving your system**, not blaming you.
+3. **Эмоционально безопасно и без шейма**  
+   - Никаких красных “ты опять перерасходовал”.
+   - Мы признаём, что система (аренда, медицина, инфляция) дорогая и сложная.
+   - Мы чиним **конструкцию вокруг денег**, а не “исправляем человека”.
 
-4. **Layer, not replacement**  
-   - We sit **on top of** your bank app and spreadsheets.
-   - We respect the work you already do and make it count more.
+4. **Слой поверх того, что уже есть**  
+   - myTruv не заменяет банк‑апп или табличку, он **сидит сверху**.
+   - Подключаем счета, читаем паттерны, собираем в одну картину.
 
-5. **Progress without exposing numbers**  
-   - You can share **Truv Score, streaks, rings and wins**, not your salary or balances.
+5. **Прогресс без обнажения цифр**  
+   - Люди могут делиться Truv Score, кольцами, стриками, ачивками.
+   - Не нужно светить зарплату, баланс или сумму трат.
 
 ---
 
 ## 4. Key Messages & Taglines
 
-### 4.1 Brand One‑liners
+### 4.1 Brand one‑liners
 
-- **“Financial autopilot for messy real life.”**
+- **“AI money companion for messy real life.”**
+- **“Financial autopilot, not another budgeting app.”**
 - **“Feel in control without living in a spreadsheet.”**
 - **“Money under control, without becoming your own accountant.”**
-- **“The behavior layer that makes your money tools actually work.”**
-- **“Simple steps, calmer money.”**
+- **“One calm score. A few simple steps.”**
 
-### 4.2 Segment‑Specific Angles
+### 4.2 Segment‑specific angles (подробно в personas.md)
 
-**For heavy‑online, advanced users**
+**Для “Exhausted Power User”**
 
-- “You’ve tried bank apps, Excel and budgeting tools. myTruv connects the dots and runs the behavior autopilot on top.”
-- “Not another dashboard. A single score and a couple of smart moves.”
+- “Ты уже пробовал банк‑аппы, Excel и budgeting‑софты. myTruv — умный слой, который наконец всё это соединяет.”
+- “Не ещё один дашборд. Один скор и пара умных ходов.”
 
-**For self‑employed**
+**Для self‑employed / фрилансеров**
 
-- “Turn irregular income into a predictable money rhythm.”
-- “A cashflow calendar that understands your chaos — and builds buffers for taxes, insurance and big bills.”
+- “Преврати рваный доход в предсказуемый ритм.”
+- “Кэшфлоу‑календарь, который понимает твой хаос и заранее строит буферы под налоги, страховки и простои.”
 
-**For full‑time employees**
+**Для занятых full‑time**
 
-- “After work, you don’t need to be your own CFO. myTruv flies the plane; you just choose simple yes/no decisions.”
-- “You work hard for your money. myTruv makes sure your money works for you without another part‑time job.”
+- “У тебя уже есть full‑time job. Не добавляй ещё роль CFO.”
+- “myTruv крутит маховик в фоне, тебе остаётся пару понятных да/нет решений.”
 
-**For intermediate / non‑finance‑nerds**
+**Для людей, которые “не любят финансы”**
 
-- “One clear score. One next step. No finance jargon.”
-- “You don’t have to be ‘good with money’. You just need a system that has your back.”
+- “Один понятный скор. Один следующий шаг. Без жаргона.”
+- “Не обязательно быть ‘хорошим с деньгами’. Достаточно иметь систему, которая за тебя думает.”
 
-**For women / high‑anxiety users**
+**Для тревожных / high‑anxiety пользователей**
 
-- “Money without shame. We fix the system, not your worth.”
-- “You’re not ‘bad with money’. You were never given an honest, simple system. We build it with you.”
+- “Деньги без стыда. Мы правим систему, а не твою самооценку.”
+- “Ты не ‘плохой с деньгами’. Тебя просто не учили. Мы строим нормальную структуру вместе.”
 
-### 4.3 What We Explicitly Do *Not* Say
+### 4.3 What we explicitly *don’t* say
 
-Avoid phrases that trigger guilt, shame or “you’re failing”:
+Избегаем фраз, которые звучат как осуждение или доп.нагрузка:
 
 - ❌ “Track every dollar.”
 - ❌ “Fix your bad money habits.”
 - ❌ “Stop wasting money.”
 - ❌ “Be smarter with money.”
-- ❌ “Take full control of your finances” (sounds like more work).
+- ❌ “Take full control of your finances.”
 
-Preferred framing:
+Переводим в поддерживающий язык:
 
-- ✅ “We’ll help you see where your system is leaking.”
-- ✅ “Small steps that quietly improve your money every week.”
-- ✅ “We make your existing tools work together.”
-- ✅ “We smooth the chaos of irregular income.”
+- ✅ “Поможем увидеть, где система даёт течь.”
+- ✅ “Маленькие шаги каждую неделю делают деньги всё спокойнее.”
+- ✅ “Мы подружим твой банк‑апп, карты и привычки в одну понятную картину.”
+- ✅ “Даже с нестабильным доходом можно чувствовать опору — мы сглаживаем хаос.”
 
 ---
 
 ## 5. Product Narrative & Features (Brand View)
 
-### 5.1 What myTruv Feels Like
+### 5.1 What myTruv feels like
 
-**Not**: a budgeting spreadsheet with extra steps.  
-**Instead**: a **health dashboard for your money system**.
+**Не**: ещё один budgeting tool, который рисует графики и говорит “ты всё делаешь неправильно”.  
+**А**: **панель здоровья денег** + карманный товарищ.
 
-When you log in, you see:
+Открываешь — и видишь:
 
-1. **Truv Score** – your money system health (not your income level).
-2. **Short diagnosis** – in plain language:
-   - “You’re okay as long as you don’t add new subscriptions this month.”
-   - “You’re close to your safe zone for groceries. One small adjustment keeps you on track.”
-3. **1–3 next steps** – clear, doable actions:
-   - “Today, move $20 to your safety cushion.”
-   - “Pause one delivery app this week.”
-   - “Pay $30 extra to this card to avoid interest.”
+1. **Truv Score** — здоровье твоей системы (подушка, долговая нагрузка, стабильность расходов).
+2. **Короткий диагноз** простым языком:
+   - “Ты в зелёной зоне, если не добавлять новых подписок.”
+   - “Еда вне дома близко к границе, одно‑два небольших изменения держат тебя в безопасности.”
+3. **1–3 next steps**:
+   - “Сегодня перекинь $20 в подушку.”
+   - “На этой неделе заморозь одну доставку.”
+   - “Заплати на $30 больше по этой карте — срежем проценты.”
 
-Everything else is secondary.
+Остальное — вторично.
 
-### 5.2 Key Feature Stories (How We Talk About Them)
+---
 
-**Cashflow smoothing (for fluctuating income)**
+### 5.2 Feature stories (как мы про них говорим)
 
-- “myTruv looks at your noisy income and bills and builds a ‘steady paycheck’ version of your life.”
-- “We show your **safe daily/weekly burn**, even when real deposits are irregular.”
-- “You always know if you’re in the **safe zone** or **danger zone**.”
+**Cashflow smoothing**
+
+- “myTruv смотрит на твой шумный поток доходов/расходов и строит версию ‘как будто у тебя ровный оклад’.”
+- “Мы считаем твою безопасную дневную/недельную скорость сжигания денег.”
+- “Ты всегда видишь: ты сейчас в безопасной зоне или начинаешь подрезать подушку.”
 
 **Buffers & cushions**
 
-- “We quietly build buffers for taxes, healthcare, emergencies and big bills.”
-- “You see which ‘future punches’ you’re already covered for, and which ones still need padding.”
+- “Мы тихо собираем буферы под налоги, медицину, крупные счета и неожиданные ремонты.”
+- “Ты видишь, от каких будущих ударов ты уже защищён, а где броня ещё тонкая.”
 
 **Behavior autopilot**
 
-- “You don’t have to think about money every day. myTruv watches patterns and pings you only when it matters.”
-- “Instead of ‘check this dashboard every morning’, you get one or two focused nudges a day or week.”
+- “Не нужно ежедневно думать о деньгах. myTruv следит за паттернами.”
+- “Мы пингуем только когда это реально важно:
+  - ‘Если так продолжится, через Х месяцев cushion станет хрупкой.’
+  - ‘Сейчас хорошее окно, чтобы добавить чуть‑чуть в подушку.’”
 
-**Truv Score & rings**
+**Truv Score, кольца, стрики**
 
-- “Your Truv Score reflects your **discipline and system health**, not your salary.”
-- “Someone on $45k and someone on $95k can both reach Elite if they build a resilient system over time.”
-- “You can share your score, streaks and rings with friends without ever sharing raw numbers.”
+- “Truv Score — про дисциплину и устойчивость системы, а не про размер зарплаты.”
+- “Человек на $45k и на $95k могут быть на одном уровне здоровья, если система у них выстроена.”
+- “Можно делиться прогрессом — скором, кольцами, сериями — без открытия голых цифр.”
 
 ---
 
@@ -283,139 +289,120 @@ Everything else is secondary.
 
 ### 6.1 Personality
 
-- **Calm, steady, supportive** – we’re the grown‑up friend who’s got your back.
-- **Honest and direct** – we acknowledge inflation, housing, medical costs, and low income realities.
-- **Non‑judgmental** – no shaming, no moralizing.
-- **Practical** – always focused on the next small, concrete step.
-- **Tech‑comfortable but human** – we can mention “automation” and “systems”, but we speak like a real person, not an API.
+- **Calm** — без истерики, без clickbait.
+- **Kind** — как взрослый друг, который не осуждает.
+- **Honest** — говорим как есть про систему (медицина, аренда, инфляция).
+- **Practical** — всегда есть маленький actionable вывод.
+- **Tech‑комфортный, но человеческий** — внутри AI, снаружи простой человеческий язык.
 
-### 6.2 Voice Principles
+### 6.2 Principles
 
-1. **Normalize the problem**
-   - “It’s normal to feel like money is a bit chaotic.”
-   - “Most people were never really taught how to do this.”
+1. **Нормализуем, не стыдим**
 
-2. **Shrink the task**
-   - “You don’t need a new 20‑page budget. Let’s start with one habit this week.”
-   - “Today’s win can be as small as moving $10 to the right place.”
+   - “Нормально, что с деньгами иногда хаос.”
+   - “Большинство людей не получали нормального финансового образования.”
 
-3. **Remove shame**
-   - “You’re not alone in this.”
-   - “Bad days happen. What matters is the next tiny correction.”
+2. **Уменьшаем задачу**
 
-4. **Highlight agency without blame**
-   - “We can’t change rent or healthcare costs. We can change how protected you are against them.”
-   - “We can’t magically raise your income, but we can make every dollar work harder for you.”
+   - Не “пересобери свою жизнь”, а “сделай один маленький шаг сегодня”.
+   - Любая рекомендация должна быть выполнена **за пару минут**.
 
-5. **Celebrate progress**
-   - “You just protected Future You from $120 in fees this year.”
-   - “Your cushion is now one paycheck thicker than a month ago.”
+3. **Разделяем человека и систему**
 
-### 6.3 Do & Don’t (Copy Examples)
+   - “Система вокруг денег хрупкая — давай сделаем её устойчивее.”
+   - Не “ты плохой”, а “сейчас система делает тебе больно, поправим её”.
+
+4. **Отмечаем прогресс**
+
+   - “Ты избежал $120 комиссий в этом году.”
+   - “Подушка на одну зарплату толще, чем месяц назад.”
+
+### 6.3 Do / Don’t
 
 **DO**
 
-- “You’re close to your safe zone for this month’s eating out. One small adjustment keeps you in the green.”
-- “You’ve been consistent for 9 days. That’s how real change looks.”
-- “This week, your money system got you through a surprise bill without panic. That’s what we’re building towards.”
+- “Эта поездка в Vegas сделала месяц дороже обычного, но твоя подушка выдержала — это победа.”
+- “Если держать текущий ритм ещё пару недель, скор вернётся в прежнюю зелёную зону.”
+- “Один неожиданный счёт — это не провал, а тест системы. Ты его прошёл.”
 
 **DON’T**
 
-- “You overspent again on restaurants.”
-- “You failed to stick to your budget.”
-- “You’re bad at controlling your impulses.”
-
-Rewrite “don’t” into “do”:
-
-- ❌ “You overspent again on delivery this week.”  
-  ✅ “Delivery has been creeping up. Skip just one order this week and your cushion stays on track.”
-
-- ❌ “Stop making bad choices with your credit card.”  
-  ✅ “Your credit card is doing more heavy lifting than usual. One extra payment now prevents interest from snowballing.”
+- “Ты снова потратил слишком много на развлечения.”
+- “Ты не умеешь контролировать импульсивные траты.”
+- “Твой скор упал, потому что ты сделал плохой выбор.”
 
 ---
 
 ## 7. Social & Community
 
-### 7.1 What We Encourage People to Share
+### 7.1 Что предлагаем делиться
 
-Because openness → less anxiety, but people hate sharing raw numbers.
+**Можно делиться:**
 
-We **do encourage** sharing:
+- ростом Truv Score,
+- стриками (“14 дней не залезал в кредитку”),
+- кольцами (“5 раз подряд попал в зелёную зону по еде/доставке”),
+- маленькими победами (“отменил 3 ненужные подписки”, “собрал первую месячную подушку”).
 
-- Truv Score progress (e.g. 47 → 63).
-- Streaks (“14 days in the green zone”).
-- Rings completed (“Safety ring closed 5 times this week”).
-- Behavioral wins (“Cancelled 3 useless subscriptions”, “Built my first one‑month cushion”).
+**Не нужно делиться:**
 
-We **don’t require** sharing:
+- зарплатой,
+- балансами,
+- точными суммами трат.
 
-- Income.
-- Account balances.
-- Exact spending per category.
+### 7.2 Как мы это формулируем
 
-### 7.2 Social Copy Framing
-
-- “Share your streaks and wins, not your salary.”
-- “Flex your system, not your bank balance.”
-- “The only number your friends see is how consistent you are.”
+- “Делись дисциплиной, не цифрами.”
+- “Flex your system, not your salary.”
+- “Единственная цифра, которую видят друзья, — насколько стабильно ты держишься в зелёной зоне.”
 
 ---
 
 ## 8. Boundaries & Honesty
 
-We are **not**:
+Мы **не**:
 
-- A magic income booster.
-- A replacement for a job, raise, or systemic change.
-- A financial education course with lectures and exams.
+- не магический бустер дохода,
+- не замена работе, повышению или системным изменениям,
+- не курс по финансовой грамотности.
 
-We **are**:
+Мы **да**:
 
-- A system that makes your existing income **more resilient** and **less chaotic**.
-- A way to **squeeze more safety and calm** out of the money you already earn.
-- A supportive layer that keeps you moving, even when life is noisy.
+- делаем существующий доход **устойчивее** и **менее хаотичным**,
+- помогаем выжать максимум спокойствия из того, что уже есть,
+- даём опору и структуру там, где раньше был только стресс.
 
-Example honest copy:
+Честные формулировки:
 
-- “We can’t fix rent or healthcare prices. We can help you build a cushion so they don’t knock you over.”
-- “We can’t promise you’ll never feel stressed about money. We can promise you won’t face it alone or blind.”
+- “Мы не можем отменить аренду или цены на медицину. Мы можем помочь построить подушку, чтобы они не сбивали тебя с ног.”
+- “Мы не обещаем, что деньги никогда не будут тревожить. Но обещаем, что ты не останешься с этим один и вслепую.”
 
 ---
 
-## 9. Example Brand Copy (Ready‑to‑Use Snippets)
+## 9. Brand TL;DR (Cheat Sheet)
 
-**Website hero**
+Для быстрых брифов и созвонов.
 
-> **Money feels messy. myTruv makes it manageable.**  
-> Connect your accounts, get one clear score and a couple of simple steps each week.  
-> No complicated budgets. No shame. Just a calmer money system that works even when your income doesn’t look the same every month.
+**What we are**
 
-**Sub‑hero (fluctuating income)**
+- AI‑powered, no‑hustle **money companion**.
+- Один спокойный **Truv Score**, одна основная лента, пара мягких подсказок.
+- Работает поверх всех твоих банков и карт, понимает хаотичный кэшфлоу.
 
-> **Built for real‑life cashflow, not textbook paychecks.**  
-> myTruv smooths your irregular income into a steady‑feeling plan, builds buffers for taxes and surprises, and tells you when you’re in the safe zone — or when a small action now prevents big stress later.
+**What we promise**
 
-**For self‑employed**
+- Ты **никогда не получишь “красный экран позора”**, когда откроешь app.
+- За 10–30 секунд ты поймёшь:
+  - “Я ок / не ок”,
+  - что поменялось,
+  - и один маленький шаг, который помогает прямо сейчас.
+- Мы заботимся о **здоровье системы**, а не о том, чтобы ты стал идеальным бухгалтером.
 
-> **Your work is unpredictable. Your money doesn’t have to be.**  
-> myTruv turns irregular invoices into a predictable rhythm: a cashflow calendar, automatic buffers, and one or two focused actions so you’re not watching your accounts every hour.
+**Who can use us**
 
-**For full‑time**
+- Любой человек, которому деньги кажутся **тяжёлыми, хаотичными или стыдными** — вне зависимости от возраста и дохода.
 
-> **You already have a full‑time job. Don’t add ‘CFO’ on top.**  
-> myTruv does the heavy tracking in the background and surfaces only the decisions that actually matter this week.
+**How we sound**
 
-**For app‑fatigued users**
-
-> **If your bank app, spreadsheet and budgeting app haven’t made you calmer…**  
-> It’s not you. They made you the bookkeeper.  
-> myTruv sits on top of what you already use and turns it into a simple, low‑effort routine that actually feels like control.
-
-**Closing line**
-
-> **You were never properly taught how to do money. That’s not your fault.**  
-> myTruv gives you a simple, honest system — so your finances can finally feel like part of your life, not a second job.
-
-
-
+- Лёгко, по‑человечески, без морали.
+- Много “ты уже делаешь многое правильно” + “вот одна простая донастройка”.
