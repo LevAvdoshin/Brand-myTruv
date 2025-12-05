@@ -156,6 +156,13 @@ function slugify(text) {
     .slice(0, 80);
 }
 
+function normalizeHeading(text) {
+  const emojiMatch = text.match(/[\p{Emoji}\p{Extended_Pictographic}]/gu) || [];
+  const cleaned = text.replace(/[\p{Emoji}\p{Extended_Pictographic}]/gu, "").trim();
+  const emojiPart = emojiMatch.join(" ");
+  return emojiPart ? `${cleaned} ${emojiPart}` : cleaned;
+}
+
 function buildSectionMenu() {
   if (!sectionMenu) return;
 
@@ -177,9 +184,11 @@ function buildSectionMenu() {
     el.id = id;
     seenIds.add(id);
 
+    const normalizedText = normalizeHeading(el.textContent || "Section");
+
     return {
       id,
-      text: el.textContent || "Section",
+      text: normalizedText,
       level: el.tagName.toLowerCase(),
       node: el,
     };
@@ -372,7 +381,7 @@ loadDoc(activeDoc.id);
 const backToTop = document.getElementById("back-to-top");
 if (backToTop) {
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 360) {
+    if (window.scrollY > 120) {
       backToTop.classList.add("visible");
     } else {
       backToTop.classList.remove("visible");

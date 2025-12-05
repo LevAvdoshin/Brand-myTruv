@@ -179,23 +179,41 @@ button {
   border-radius: 12px;
   font-size: 15px;
   font-weight: 700;
-  transition: transform 0.08s ease, box-shadow 0.12s ease, background 0.12s ease;
+  transition: transform 0.2s ease, box-shadow 0.24s ease, background 0.2s ease, filter 0.2s ease;
 }
 
 .primary {
-  background: linear-gradient(120deg, #2c64e3, #1747b3);
+  background: linear-gradient(120deg, #1f4cd7, #1539a6);
   color: #ffffff;
-  box-shadow: 0 12px 32px rgba(44, 100, 227, 0.28);
+  box-shadow: 0 12px 32px rgba(31, 76, 215, 0.28);
 }
 
 .primary:hover {
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.01);
+  filter: brightness(1.02);
+  box-shadow: 0 16px 38px rgba(31, 76, 215, 0.32);
+}
+
+.primary:active {
+  transform: translateY(-1px) scale(0.99);
+  box-shadow: 0 10px 26px rgba(31, 76, 215, 0.2);
 }
 
 .ghost {
   background: #ffffff;
   color: var(--accent);
   border: 1px solid #d9e2f5;
+}
+
+.ghost:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px) scale(1.01);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.14);
+}
+
+.ghost:active {
+  transform: translateY(-1px) scale(0.99);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.12);
 }
 
 .layout {
@@ -244,10 +262,10 @@ button {
   padding: 12px;
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(242, 247, 255, 0.85));
   box-shadow: 0 24px 60px rgba(12, 23, 45, 0.12);
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  min-height: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  min-height: 240px;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
 }
@@ -270,10 +288,10 @@ button {
 }
 
 .category-docs {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
   gap: 8px;
-  margin-top: 2px;
+  margin-top: 0;
 }
 
 .quick-links {
@@ -306,7 +324,7 @@ button {
   border: 1px solid rgba(223, 230, 243, 0.9);
   cursor: pointer;
   transition: border-color 0.12s ease, transform 0.08s ease, background 0.2s ease;
-  flex: 1 1 auto;
+  flex: 1 1 100%;
 }
 
 .doc-card:hover {
@@ -557,18 +575,19 @@ button {
 .back-to-top {
   position: fixed;
   right: 24px;
-  bottom: 28px;
-  padding: 12px 14px;
+  bottom: 32px;
+  width: 44px;
+  height: 44px;
   border: 1px solid rgba(223, 230, 243, 0.9);
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(242, 246, 255, 0.92));
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(44, 100, 227, 0.16), rgba(255, 255, 255, 0.95));
   box-shadow: 0 14px 36px rgba(12, 23, 45, 0.14);
   color: #0f172a;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.15s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
   z-index: 20;
 }
 
@@ -578,12 +597,13 @@ button {
 }
 
 .back-to-top:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px) scale(1.02);
   border-color: var(--accent);
+  box-shadow: 0 18px 42px rgba(31, 76, 215, 0.28);
 }
 
 .back-to-top:active {
-  transform: translateY(0);
+  transform: translateY(-1px) scale(0.99);
 }
 
 @media (max-width: 1024px) {
