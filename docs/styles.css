@@ -347,6 +347,7 @@ button {
 
 .ai-box {
   margin-bottom: 16px;
+  padding: 18px;
 }
 
 .ai-header {
@@ -374,14 +375,21 @@ button {
 
 .ai-input-row {
   display: flex;
-  gap: 10px;
-  margin-top: 10px;
-  align-items: flex-start;
+  gap: 12px;
+  margin-top: 12px;
+  align-items: stretch;
+  flex-wrap: wrap;
 }
 
-#ai-question {
-  flex: 1;
-  min-height: 80px;
+.ai-question {
+  flex: 1 1 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ai-question textarea {
+  min-height: 70px;
   padding: 12px;
   border-radius: 12px;
   border: 1px solid #dfe4ef;
@@ -389,16 +397,8 @@ button {
   resize: vertical;
 }
 
-#ai-submit {
-  white-space: nowrap;
-  align-self: stretch;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .ai-status {
-  margin: 6px 0 4px;
+  margin: 10px 0 6px;
   min-height: 18px;
 }
 
@@ -413,10 +413,11 @@ button {
 .ai-answer {
   border: 1px solid #e5e7eb;
   border-radius: 12px;
-  padding: 12px;
+  padding: 14px;
   background: #f9fafb;
   min-height: 40px;
   color: #0f172a;
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.02);
 }
 
 .ai-answer p {
@@ -437,6 +438,14 @@ button {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+.ai-submit {
+  min-width: 88px;
+  align-self: flex-end;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .section-menu {

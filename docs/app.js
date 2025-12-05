@@ -101,6 +101,32 @@ const aiConfig = {
   maxTokens: 600,
 };
 
+function setAiStatus(message, type = "") {
+  if (!aiStatus) return;
+  aiStatus.textContent = message;
+  aiStatus.classList.remove("error", "success");
+  if (type) aiStatus.classList.add(type);
+}
+
+function loadStoredApiKey() {
+  if (!aiKeyInput) return "";
+  try {
+    const stored = localStorage.getItem("truv_ai_api_key");
+    if (stored) aiKeyInput.value = stored;
+    return stored || "";
+  } catch {
+    return "";
+  }
+}
+
+function saveApiKey(key) {
+  try {
+    localStorage.setItem("truv_ai_api_key", key);
+  } catch {
+    // ignore storage issues
+  }
+}
+
 function renderDocList() {
   docList.innerHTML = "";
 
@@ -365,6 +391,7 @@ async function askAi() {
   aiSubmitButton.disabled = true;
   aiSubmitButton.textContent = "Asking…";
   setAiStatus("Thinking…");
+  aiAnswer.innerHTML = `<p class="note">Working on it…</p>`;
 
   try {
     const response = await fetch(aiConfig.endpoint, {
@@ -397,11 +424,13 @@ async function askAi() {
       aiAnswer.innerHTML = marked.parse(text);
       setAiStatus("Done.", "success");
     } else {
-      aiAnswer.textContent = "";
+      aiAnswer.innerHTML = `<p class="note">No answer returned.</p>`;
       setAiStatus("No answer returned.", "error");
     }
   } catch (error) {
-    setAiStatus(error.message || "Request failed.", "error");
+    const message = error?.message || "Request failed.";
+    setAiStatus(message, "error");
+    aiAnswer.innerHTML = `<p class="note">Error: ${message}</p>`;
   } finally {
     aiSubmitButton.disabled = false;
     aiSubmitButton.textContent = "Ask";
