@@ -2,7 +2,8 @@ import { marked } from "https://cdn.jsdelivr.net/npm/marked@12.0.2/lib/marked.es
 
 const repo = "levavdoshin-max/Truv-Lev-Tests";
 const branch = "main";
-const rawBase = `https://cdn.jsdelivr.net/gh/${repo}@${branch}`;
+const cdnBase = `https://cdn.jsdelivr.net/gh/${repo}@${branch}`;
+const rawBase = `https://raw.githubusercontent.com/${repo}/${branch}`;
 
 const docs = [
   {
@@ -322,13 +323,17 @@ async function loadDoc(docId, opts = {}) {
   renderDocList();
 
   setLoading("Loading the latest Markdown…");
-  const url = `${rawBase}/${doc.file}${opts.cacheBust ? `?t=${Date.now()}` : ""}`;
+  const cacheBust = opts.cacheBust ? `?t=${Date.now()}` : "";
+  const cdnUrl = `${cdnBase}/${doc.file}${cacheBust}`;
+  const rawUrl = `${rawBase}/${doc.file}${cacheBust}`;
 
   try {
-    const response = await fetch(url);
+    let response = await fetch(cdnUrl);
     if (!response.ok) {
-      throw new Error(`Fetch error ${response.status}`);
+      // fallback to raw.githubusercontent if CDN fails
+      response = await fetch(rawUrl);
     }
+    if (!response.ok) throw new Error(`Fetch error ${response.status}`);
 
     const markdown = await response.text();
     const html = marked.parse(markdown);
@@ -338,7 +343,7 @@ async function loadDoc(docId, opts = {}) {
     docRoot.innerHTML = `
       <div class="error">
         <strong>Could not load ${doc.title}.</strong><br />
-        ${error.message}. You can still open it on GitHub.
+        ${error.message}. Try a hard refresh or open it on GitHub.
       </div>
     `;
   }
