@@ -10,7 +10,7 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="./styles.css?v=truv14" />
+  <link rel="stylesheet" href="./styles.css?v=truv15" />
 </head>
 <body>
   <div class="bg-glow bg-glow-1"></div>
@@ -32,38 +32,6 @@
       </div>
     </header>
 
-    <section class="panel ai-box">
-      <div class="ai-header">
-        <div>
-          <p class="eyebrow">AI helper</p>
-          <h3>Ask about the brand</h3>
-          <p class="note">Add your OpenAI API key (kept only in this browser) and ask about any doc.</p>
-        </div>
-        <div class="ai-key">
-          <label for="ai-key" class="note">API key</label>
-          <input id="ai-key" type="password" placeholder="sk-..." autocomplete="off" />
-          <p class="note tiny">Stored locally; never sent anywhere else.</p>
-        </div>
-      </div>
-
-      <div class="ai-input-row">
-        <div class="ai-question">
-          <label class="note" for="ai-question">Your question</label>
-          <textarea
-            id="ai-question"
-            rows="2"
-            placeholder="e.g. “Summarize the brand promise” or “What’s our SEO positioning?” (Cmd/Ctrl + Enter to send)"
-          ></textarea>
-        </div>
-        <button class="primary ai-submit" id="ai-submit" type="button">Ask</button>
-      </div>
-
-      <p class="ai-status note" id="ai-status">Waiting for your question…</p>
-      <div class="ai-answer" id="ai-answer">
-        <p class="note">Answer will appear here.</p>
-      </div>
-    </section>
-
     <section class="layout">
       <div class="panel top-menu">
         <div class="sidebar-header">
@@ -84,6 +52,37 @@
             <p class="note" id="doc-desc">Essence, promise, feelings, and how we show up.</p>
           </div>
         </div>
+        <section class="panel ai-box">
+          <div class="ai-header">
+            <div>
+              <p class="eyebrow">AI helper</p>
+              <h3>Ask about the brand</h3>
+              <p class="note">Add your OpenAI API key (kept only in this browser) and ask about any doc.</p>
+            </div>
+            <div class="ai-key">
+              <label for="ai-key" class="note">API key</label>
+              <input id="ai-key" type="password" placeholder="sk-..." autocomplete="off" />
+              <p class="note tiny">Stored locally; never sent anywhere else.</p>
+            </div>
+          </div>
+
+          <div class="ai-input-row">
+            <div class="ai-question">
+              <label class="note" for="ai-question">Your question</label>
+              <textarea
+                id="ai-question"
+                rows="2"
+                placeholder="Ask about the brand, messaging, personas, SEO… (Cmd/Ctrl + Enter to send)"
+              ></textarea>
+            </div>
+            <button class="primary ai-submit" id="ai-submit" type="button">Ask</button>
+          </div>
+
+          <p class="ai-status note" id="ai-status">Waiting for your question…</p>
+          <div class="ai-answer" id="ai-answer">
+            <p class="note">Answer will appear here.</p>
+          </div>
+        </section>
         <div id="section-menu" class="section-menu"></div>
         <article id="doc-root" class="doc-body">
           <div class="loading">
@@ -97,7 +96,6 @@
 
   <button id="back-to-top" class="back-to-top" aria-label="Back to top">↑</button>
 
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script type="module" src="./app.js?v=truv14"></script>
+  <script type="module" src="./app.js?v=truv15"></script>
 </body>
 </html>

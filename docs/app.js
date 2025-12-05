@@ -1,6 +1,8 @@
+import { marked } from "https://cdn.jsdelivr.net/npm/marked@12.0.2/lib/marked.esm.js";
+
 const repo = "levavdoshin-max/Truv-Lev-Tests";
 const branch = "main";
-const rawBase = `https://raw.githubusercontent.com/${repo}/${branch}`;
+const rawBase = `https://cdn.jsdelivr.net/gh/${repo}@${branch}`;
 
 const docs = [
   {
@@ -325,7 +327,7 @@ async function loadDoc(docId, opts = {}) {
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      throw new Error(`GitHub returned ${response.status}`);
+      throw new Error(`Fetch error ${response.status}`);
     }
 
     const markdown = await response.text();
