@@ -206,6 +206,8 @@ button {
   border-radius: 16px;
   box-shadow: var(--shadow);
   padding: 18px 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .top-menu {
@@ -232,18 +234,21 @@ button {
 }
 
 .category-card {
-  border: 1px solid #dde4f0;
+  border: 1px solid rgba(221, 228, 240, 0.7);
   border-radius: 16px;
   padding: 14px;
-  background: #fff;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(244, 247, 255, 0.78));
+  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.08);
   display: grid;
   gap: 12px;
   min-height: 220px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
 .category-card.featured {
-  border: 1px solid #cbd7f6;
-  background: #f3f6ff;
+  border: 1px solid rgba(44, 100, 227, 0.4);
+  background: linear-gradient(140deg, rgba(236, 244, 255, 0.95), rgba(225, 234, 255, 0.85));
 }
 
 .category-header h3 {
@@ -290,12 +295,12 @@ button {
 .doc-card {
   padding: 16px 14px;
   border-radius: 12px;
-  background: #fff;
-  border: 1px solid #dfe6f3;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(247, 250, 255, 0.86));
+  border: 1px solid rgba(223, 230, 243, 0.9);
   cursor: pointer;
   transition: border-color 0.12s ease, transform 0.08s ease, background 0.2s ease;
   flex: 1 1 100%;
-  }
+}
 
 .doc-card:hover {
   border-color: #2c64e3;
@@ -304,7 +309,8 @@ button {
 
 .doc-card.active {
   border-color: var(--accent);
-  box-shadow: 0 10px 26px rgba(44, 100, 227, 0.12);
+  box-shadow: 0 14px 36px rgba(44, 100, 227, 0.18);
+  background: linear-gradient(135deg, rgba(236, 244, 255, 0.95), rgba(233, 240, 255, 0.88));
 }
 
 .doc-card .title {
@@ -351,11 +357,13 @@ button {
 .section-menu {
   margin: 12px 0 16px;
   padding: 12px 14px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid rgba(229, 231, 235, 0.8);
   border-radius: 12px;
-  background: #f8fafc;
+  background: linear-gradient(140deg, rgba(248, 250, 252, 0.9), rgba(244, 247, 252, 0.88));
   display: grid;
   gap: 12px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .section-menu .section-menu-header h3 {
@@ -422,7 +430,9 @@ button {
   border: 1px solid var(--border);
   border-radius: 14px;
   padding: 22px 24px 30px;
-  background: #ffffff;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(246, 249, 255, 0.9));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .loading {
