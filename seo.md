@@ -2,7 +2,7 @@
 
 # myTruv — FI Taxonomy (extended) + Action / Income / Risk
 
-> Жирная версия: без философии, только онтология + расширенные субтайпы и экшены.
+> Dense version: no philosophy, just the ontology with extended subtypes and actions.
 
 Use as **closed lists** for prompts and mappings: `FI Type` → `FI Subtype` → `Action` → `Income` / `Risk`.
 

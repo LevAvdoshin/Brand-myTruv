@@ -10,7 +10,7 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="./styles.css?v=truv22" />
+  <link rel="stylesheet" href="./styles.css?v=truv23" />
 </head>
 <body>
   <div class="bg-glow bg-glow-1"></div>
@@ -46,17 +46,22 @@
         </div>
       </div>
 
-      <div class="ai-input-row">
-        <div class="ai-question">
-          <label class="note" for="ai-question">Your question</label>
-          <textarea
-            id="ai-question"
-            rows="2"
-            placeholder="e.g. “Summarize the brand promise” or “What’s our SEO positioning?” (Cmd/Ctrl + Enter to send)"
-          ></textarea>
-        </div>
-        <button class="primary ai-submit" id="ai-submit" type="button">Ask</button>
-      </div>
+          <div class="ai-input-row">
+            <div class="ai-question">
+              <label class="note" for="ai-question">Your question</label>
+              <textarea
+                id="ai-question"
+                rows="2"
+                placeholder="e.g. “Summarize the brand promise” or “What’s our SEO positioning?” (Cmd/Ctrl + Enter to send)"
+              ></textarea>
+              <div class="ai-suggestions" id="ai-suggestions">
+                <button type="button" class="chip" data-suggest="Give a 3-bullet brand promise summary.">Brand promise summary</button>
+                <button type="button" class="chip" data-suggest="What’s our tone and what should we avoid?">Tone & avoid list</button>
+                <button type="button" class="chip" data-suggest="List SEO action types we recommend most often.">Top SEO actions</button>
+              </div>
+            </div>
+            <button class="primary ai-submit" id="ai-submit" type="button">Ask</button>
+          </div>
 
       <p class="ai-status note" id="ai-status">Waiting for your question…</p>
       <div class="ai-answer" id="ai-answer">
@@ -74,6 +79,22 @@
           <p class="note">Pick a guide and jump straight to the details you need.</p>
         </div>
         <div class="doc-grid" id="doc-list"></div>
+      </div>
+
+      <div class="panel flow-diagram">
+        <p class="eyebrow">FI taxonomy flow</p>
+        <h3>How SEO mapping works</h3>
+        <div class="flow-row">
+          <div class="flow-node">FI Type<br /><span>20 categories</span></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node">FI Subtype<br /><span>Expanded patterns</span></div>
+          <div class="flow-arrow">→</div>
+          <div class="flow-node">Action<br /><span>30 recs</span></div>
+          <div class="flow-arrow">↘</div>
+          <div class="flow-node small">Income<br /><span>range</span></div>
+          <div class="flow-node small">Risk<br /><span>level</span></div>
+        </div>
+        <p class="note">Use as closed lists in prompts and DB: map 1300+ keys → Type / Subtype / Action / Income / Risk.</p>
       </div>
 
       <main class="panel content">
