@@ -90,6 +90,7 @@ const aiQuestionInput = document.getElementById("ai-question");
 const aiSubmitButton = document.getElementById("ai-submit");
 const aiStatus = document.getElementById("ai-status");
 const aiAnswer = document.getElementById("ai-answer");
+const aiSuggestionButtons = document.querySelectorAll("#ai-suggestions .chip");
 
 let activeDoc = docs[0];
 let activeTopId;
@@ -450,6 +451,14 @@ if (aiQuestionInput) {
     }
   });
 }
+
+aiSuggestionButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (!aiQuestionInput) return;
+    aiQuestionInput.value = btn.dataset.suggest || btn.textContent || "";
+    aiQuestionInput.focus();
+  });
+});
 
 renderDocList();
 loadDoc(activeDoc.id);

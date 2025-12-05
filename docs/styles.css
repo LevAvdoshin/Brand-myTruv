@@ -493,10 +493,12 @@ button {
 
 .ai-submit {
   min-width: 88px;
-  align-self: flex-end;
+  align-self: flex-start;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  height: 44px;
+  padding: 0 16px;
 }
 
 .section-menu {
