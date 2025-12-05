@@ -373,7 +373,7 @@ button {
   display: flex;
   gap: 12px;
   margin-top: 10px;
-  align-items: flex-start;
+  align-items: flex-end;
   flex-wrap: wrap;
 }
 
@@ -493,7 +493,7 @@ button {
 
 .ai-submit {
   min-width: 88px;
-  align-self: flex-start;
+  align-self: flex-end;
   display: inline-flex;
   align-items: center;
   justify-content: center;
