@@ -158,9 +158,14 @@ function slugify(text) {
 
 function normalizeHeading(text) {
   const emojiMatch = text.match(/[\p{Emoji}\p{Extended_Pictographic}]/gu) || [];
-  const cleaned = text.replace(/[\p{Emoji}\p{Extended_Pictographic}]/gu, "").trim();
+  const withoutEmoji = text.replace(/[\p{Emoji}\p{Extended_Pictographic}]/gu, "");
+  const stripped = withoutEmoji
+    .replace(/^[\s\.\-–—•·]+/, "")
+    .replace(/^\d+\.?\s*/, "")
+    .trim();
+  const finalText = stripped || "Section";
   const emojiPart = emojiMatch.join(" ");
-  return emojiPart ? `${cleaned} ${emojiPart}` : cleaned;
+  return emojiPart ? `${finalText} ${emojiPart}` : `${finalText} 🔹`;
 }
 
 function buildSectionMenu() {
