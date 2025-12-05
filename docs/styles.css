@@ -48,6 +48,8 @@ body {
   box-shadow: var(--shadow);
   padding: 30px 32px;
   margin-bottom: 24px;
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
 }
 
 .logo-row {
@@ -224,28 +226,29 @@ button {
 
 .doc-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
   margin-top: 14px;
 }
 
 .category-card {
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 12px 12px 10px;
+  border: 1px solid #dde4f0;
+  border-radius: 16px;
+  padding: 14px;
   background: #fff;
   display: grid;
-  gap: 10px;
+  gap: 12px;
+  min-height: 200px;
 }
 
 .category-card.featured {
-  border: 1px solid var(--accent);
-  background: #eef2fb;
+  border: 1px solid #cbd7f6;
+  background: #f3f6ff;
 }
 
 .category-header h3 {
   margin: 2px 0 4px;
-  font-size: 16px;
+  font-size: 17px;
   letter-spacing: -0.01em;
 }
 
@@ -268,8 +271,8 @@ button {
 }
 
 .doc-chip {
-  border: 1px dashed #cbd5e1;
-  background: #f8fafc;
+  border: 1px dashed #d5dded;
+  background: #f7f9fe;
   color: #0f172a;
   border-radius: 10px;
   padding: 8px 10px;
@@ -285,12 +288,13 @@ button {
 }
 
 .doc-card {
-  padding: 10px 12px;
+  padding: 12px 14px;
   border-radius: 12px;
   background: #fff;
   border: 1px solid #dfe6f3;
   cursor: pointer;
   transition: border-color 0.12s ease, transform 0.08s ease, background 0.2s ease;
+  flex: 1 1 100%;
 }
 
 .doc-card:hover {
@@ -300,7 +304,7 @@ button {
 
 .doc-card.active {
   border-color: var(--accent);
-  box-shadow: 0 14px 32px rgba(44, 100, 227, 0.18);
+  box-shadow: 0 10px 26px rgba(44, 100, 227, 0.12);
 }
 
 .doc-card .title {

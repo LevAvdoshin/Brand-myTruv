@@ -54,14 +54,6 @@ const docsMap = docs.reduce((acc, doc) => {
 
 const categories = [
   {
-    id: "overview-block",
-    title: "Overview",
-    description: "Start here for the map of all brand docs.",
-    docs: ["overview"],
-    featured: true,
-    quickLinks: ["brand", "positioning", "messaging", "personas", "seo"],
-  },
-  {
     id: "brand-story",
     title: "Brand & Story",
     description: "Essence, positioning, and how we speak.",
