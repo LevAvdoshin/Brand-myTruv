@@ -85,6 +85,7 @@ const docDesc = document.getElementById("doc-desc");
 const heroButtons = document.querySelectorAll("[data-doc]");
 const sectionMenu = document.getElementById("section-menu");
 const flowDiagram = document.getElementById("flow-diagram");
+const contentPanel = document.querySelector(".content");
 const aiKeyInput = document.getElementById("ai-key");
 const aiQuestionInput = document.getElementById("ai-question");
 const aiSubmitButton = document.getElementById("ai-submit");
@@ -486,6 +487,9 @@ async function loadDoc(docId, opts = {}) {
   setHeader(doc);
   setFlowVisibility(doc.id);
   renderDocList();
+  if (opts.fromUser && contentPanel) {
+    contentPanel.classList.remove("hidden");
+  }
 
   setLoading("Loading the latest Markdown…");
   const cacheBust = opts.cacheBust ? `?t=${Date.now()}` : "";
@@ -600,7 +604,7 @@ heroButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const target = button.dataset.doc;
     if (target) {
-      loadDoc(target).then(() => {
+      loadDoc(target, { fromUser: true }).then(() => {
         window.scrollTo({ top: document.querySelector(".content")?.offsetTop || 0, behavior: "smooth" });
       });
     }
