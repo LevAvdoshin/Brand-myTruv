@@ -104,6 +104,14 @@ const aiConfig = {
   maxTokens: 600,
 };
 
+function buildResponseInput(question, context) {
+  const userText = `${question}\n\nContext (from current doc):\n${context || "No context loaded."}`;
+  return [
+    { role: "system", content: [{ type: "text", text: aiConfig.system }] },
+    { role: "user", content: [{ type: "text", text: userText }] },
+  ];
+}
+
 function extractResponseText(data) {
   if (!data) return "";
   if (typeof data.output_text === "string") return data.output_text.trim();
@@ -405,14 +413,9 @@ async function askAi() {
       },
       body: JSON.stringify({
         model: aiConfig.model,
-        input: [
-          { role: "system", content: aiConfig.system },
-          {
-            role: "user",
-            content: `${question}\n\nContext (from current doc):\n${context || "No context loaded."}`,
-          },
-        ],
+        input: buildResponseInput(question, context),
         max_output_tokens: aiConfig.maxTokens,
+        response_mode: "blocking",
         temperature: 0.2,
       }),
     });
