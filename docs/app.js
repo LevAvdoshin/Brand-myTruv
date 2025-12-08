@@ -330,7 +330,7 @@ function setAiMode(mode) {
   if (!aiModes[mode]) return;
   activeAiMode = mode;
   if (aiModeToggle) {
-    aiModeToggle.checked = mode === "fast";
+    aiModeToggle.checked = mode === "deep";
   }
 }
 
@@ -633,7 +633,7 @@ aiSuggestionButtons.forEach((btn) => {
 });
 
 if (aiModeToggle) {
-  aiModeToggle.addEventListener("change", () => setAiMode(aiModeToggle.checked ? "fast" : "deep"));
+  aiModeToggle.addEventListener("change", () => setAiMode(aiModeToggle.checked ? "deep" : "fast"));
   setAiMode(activeAiMode);
 }
 

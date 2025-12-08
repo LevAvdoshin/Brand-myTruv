@@ -377,7 +377,7 @@ button {
   display: flex;
   gap: 12px;
   margin-top: 0;
-  align-items: stretch;
+  align-items: center;
   flex-wrap: wrap;
 }
 
@@ -392,7 +392,7 @@ button {
   display: flex;
   flex-direction: row;
   gap: 10px;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-end;
   min-width: 240px;
 }
