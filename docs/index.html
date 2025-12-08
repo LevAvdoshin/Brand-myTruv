@@ -38,7 +38,7 @@
           <p class="eyebrow">myTruv AI helper</p>
           <h3>Ask about the myTruv brand</h3>
           <p class="note">Add your OpenAI API key (kept only in this browser) and ask about any doc.</p>
-          <p class="note tiny">Using GPT-5 Pro (snapshot); it may take longer but is the most capable.</p>
+          <p class="note tiny">Default: Deep (GPT-5 Pro snapshot). Fast answer uses GPT-5.1.</p>
         </div>
         <div class="ai-key">
           <label for="ai-key" class="note">API key</label>
@@ -55,14 +55,21 @@
                 rows="2"
                 placeholder="e.g. “Summarize the brand promise” or “What’s our SEO positioning?” (Cmd/Ctrl + Enter to send)"
               ></textarea>
-              <div class="ai-suggestions" id="ai-suggestions">
-                <button type="button" class="chip" data-suggest="Give a 3-bullet brand promise summary.">Brand promise summary</button>
-                <button type="button" class="chip" data-suggest="What’s our tone and what should we avoid?">Tone & avoid list</button>
-                <button type="button" class="chip" data-suggest="List SEO action types we recommend most often.">Top SEO actions</button>
-              </div>
-            </div>
-            <button class="primary ai-submit" id="ai-submit" type="button">Ask</button>
+          <div class="ai-suggestions" id="ai-suggestions">
+            <button type="button" class="chip" data-suggest="Give a 3-bullet brand promise summary.">Brand promise summary</button>
+            <button type="button" class="chip" data-suggest="What’s our tone and what should we avoid?">Tone & avoid list</button>
+            <button type="button" class="chip" data-suggest="List SEO action types we recommend most often.">Top SEO actions</button>
           </div>
+        </div>
+        <div class="ai-actions">
+          <label class="note tiny">Mode</label>
+          <div class="ai-mode-buttons">
+            <button class="ai-mode active" type="button" data-ai-mode="deep">Deep</button>
+            <button class="ai-mode" type="button" data-ai-mode="fast">Fast answer</button>
+          </div>
+          <button class="primary ai-submit" id="ai-submit" type="button">Ask</button>
+        </div>
+      </div>
 
       <p class="ai-status note" id="ai-status">Ask about myTruv</p>
       <div class="ai-answer" id="ai-answer">

@@ -91,10 +91,12 @@ const aiSubmitButton = document.getElementById("ai-submit");
 const aiStatus = document.getElementById("ai-status");
 const aiAnswer = document.getElementById("ai-answer");
 const aiSuggestionButtons = document.querySelectorAll("#ai-suggestions .chip");
+const aiModeButtons = document.querySelectorAll("[data-ai-mode]");
 
 let activeDoc = docs[0];
 let activeTopId;
 let headingObserver;
+let activeAiMode = "deep";
 
 const aiConfig = {
   endpoint: "https://api.openai.com/v1/responses",
@@ -106,6 +108,11 @@ const aiConfig = {
     attempts: 24,
     intervalMs: 5000,
   },
+};
+
+const aiModes = {
+  deep: { model: "gpt-5-pro-2025-10-06", label: "Deep (GPT-5 Pro)" },
+  fast: { model: "gpt-5.1", label: "Fast answer (GPT-5.1)" },
 };
 
 function buildResponseInput(question, context) {
@@ -316,6 +323,15 @@ function stripEmojis(text) {
   return text.replace(/[\p{Emoji}\p{Extended_Pictographic}]/gu, "").trim();
 }
 
+function setAiMode(mode) {
+  if (!aiModes[mode]) return;
+  activeAiMode = mode;
+  aiModeButtons.forEach((btn) => {
+    btn.classList.toggle("active", btn.dataset.aiMode === mode);
+  });
+  setAiStatus(`Ask about myTruv (${aiModes[mode].label})`);
+}
+
 function buildSectionMenu() {
   if (!sectionMenu) return;
 
@@ -459,10 +475,12 @@ async function askAi() {
 
   aiSubmitButton.disabled = true;
   aiSubmitButton.textContent = "Asking…";
-  setAiStatus("Thinking…");
+  const modeConfig = aiModes[activeAiMode] || aiModes.deep;
+  setAiStatus(`Thinking… (${modeConfig.label})`);
   aiAnswer.innerHTML = `<p class="note">Working on it…</p>`;
 
   try {
+    const modeConfig = aiModes[activeAiMode] || aiModes.deep;
     const response = await fetch(aiConfig.endpoint, {
       method: "POST",
       headers: {
@@ -470,7 +488,7 @@ async function askAi() {
         Authorization: `Bearer ${key}`,
       },
       body: JSON.stringify({
-        model: aiConfig.model,
+        model: modeConfig.model,
         input: buildResponseInput(question, context),
         max_output_tokens: aiConfig.maxTokens,
       }),
@@ -494,7 +512,7 @@ async function askAi() {
     }
 
     let data = parsed;
-    console.log("AI response", { status: response.status, body: data, raw });
+    console.log("AI response", { status: response.status, body: data, raw, mode: modeConfig.label });
 
     // If the response is still running, try to poll a final result briefly.
     const statusField = data?.status;
@@ -585,6 +603,13 @@ aiSuggestionButtons.forEach((btn) => {
     aiQuestionInput.focus();
   });
 });
+
+aiModeButtons.forEach((btn) => {
+  btn.addEventListener("click", () => setAiMode(btn.dataset.aiMode));
+});
+if (aiModeButtons.length) {
+  setAiMode(activeAiMode);
+}
 
 renderDocList();
 loadDoc(activeDoc.id);

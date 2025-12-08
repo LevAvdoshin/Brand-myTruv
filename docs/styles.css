@@ -384,6 +384,42 @@ button {
   gap: 6px;
 }
 
+.ai-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-end;
+  justify-content: flex-end;
+  min-width: 200px;
+}
+
+.ai-mode-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.ai-mode {
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #dfe4ef;
+  background: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.ai-mode.active {
+  background: #111827;
+  color: #fff;
+  border-color: #111827;
+}
+
+.ai-mode:hover {
+  border-color: #111827;
+}
+
 .ai-suggestions {
   display: flex;
   flex-wrap: wrap;
