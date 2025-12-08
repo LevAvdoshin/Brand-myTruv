@@ -42,7 +42,6 @@
         <div class="ai-key">
           <label for="ai-key" class="note">API key</label>
           <input id="ai-key" type="password" placeholder="sk-..." autocomplete="off" />
-          <p class="note tiny">Stored locally; never sent anywhere else.</p>
         </div>
       </div>
 
@@ -61,7 +60,10 @@
           </div>
         </div>
         <div class="ai-actions">
-          <button class="primary ai-submit" id="ai-submit" type="button">Ask</button>
+          <button class="primary ai-submit" id="ai-submit" type="button">
+            <span class="ai-submit-icon">➤</span>
+            <span>Ask</span>
+          </button>
           <label class="ai-switch" aria-label="AI mode toggle">
             <input type="checkbox" id="ai-mode-toggle" />
             <span class="ai-switch-track">
