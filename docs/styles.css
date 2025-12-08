@@ -355,8 +355,9 @@ button {
 
 .ai-key {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
   min-width: 220px;
 }
 
@@ -366,6 +367,10 @@ button {
   border: 1px solid #dfe4ef;
   background: #fff;
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+.key-label {
+  white-space: nowrap;
 }
 
 .ai-input-row {
@@ -387,7 +392,7 @@ button {
   display: flex;
   flex-direction: row;
   gap: 10px;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-end;
   min-width: 240px;
 }
@@ -415,6 +420,7 @@ button {
   border-radius: 19px;
   background: rgba(255, 255, 255, 0.65);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 4px 10px rgba(15, 63, 180, 0.08);
+  margin-top: -2px;
 }
 
 .ai-switch-label {
@@ -439,6 +445,7 @@ button {
   box-shadow: 0 8px 16px rgba(22, 72, 190, 0.16);
   transition: transform 0.2s ease, width 0.2s ease;
   z-index: 0;
+  opacity: 0.92;
 }
 
 .ai-switch input:checked + .ai-switch-track .ai-switch-handle {
@@ -474,6 +481,7 @@ button {
   gap: 0;
   align-items: center;
   justify-content: center;
+  margin-top: -4px;
 }
 
 .ai-submit-icon {
@@ -531,6 +539,7 @@ button {
   min-height: 40px;
   color: #0f172a;
   box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.02);
+  margin-top: 12px;
 }
 
 .ai-answer p {

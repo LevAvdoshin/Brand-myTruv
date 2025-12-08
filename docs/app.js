@@ -96,7 +96,7 @@ const aiModeToggle = document.getElementById("ai-mode-toggle");
 let activeDoc = docs[0];
 let activeTopId;
 let headingObserver;
-let activeAiMode = "deep";
+let activeAiMode = "fast";
 const FALLBACK_MODE = "fast";
 
 const aiConfig = {
