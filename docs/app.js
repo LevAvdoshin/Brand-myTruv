@@ -1,7 +1,7 @@
 import { marked } from "https://cdn.jsdelivr.net/npm/marked@12.0.2/lib/marked.esm.js";
 
 // Load Markdown from GitHub raw (source of truth) with cache-bust, fallback to same-origin if needed.
-const rawBase = "https://raw.githubusercontent.com/levavdoshin-max/Truv-Lev-Tests/main";
+const rawBase = "https://raw.githubusercontent.com/Globalgenerations/Brand-myTruv/main";
 const localBase = ".";
 
 const docs = [
