@@ -337,8 +337,8 @@ button {
 }
 
 .ai-box {
-  margin: 6px 0 16px;
-  padding: 14px 16px;
+  margin: 6px 0 12px;
+  padding: 12px 14px;
   background: radial-gradient(circle at 16% 18%, rgba(37, 99, 235, 0.16), rgba(250, 253, 255, 0.98)),
     linear-gradient(140deg, rgba(255, 255, 255, 0.98), rgba(232, 242, 255, 0.92));
   border: 1px solid rgba(37, 99, 235, 0.16);
@@ -347,11 +347,10 @@ button {
 }
 
 .ai-header {
-  display: flex;
-  justify-content: space-between;
-  gap: 14px;
-  flex-wrap: wrap;
-  align-items: flex-end;
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 10px;
+  align-items: center;
 }
 
 .ai-key {
@@ -372,8 +371,8 @@ button {
 .ai-input-row {
   display: flex;
   gap: 12px;
-  margin-top: 10px;
-  align-items: flex-start;
+  margin-top: 8px;
+  align-items: stretch;
   flex-wrap: wrap;
 }
 
@@ -388,10 +387,9 @@ button {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  align-items: flex-end;
+  align-items: stretch;
   justify-content: flex-start;
   min-width: 200px;
-  margin-top: 6px;
 }
 
 .ai-switch {
@@ -413,15 +411,15 @@ button {
   padding: 2px;
   width: 180px;
   height: 40px;
-  border: 1px solid #c8d7ff;
+  border: 1px solid #b6cafc;
   border-radius: 20px;
-  background: linear-gradient(135deg, #e7edff, #f5f8ff);
-  box-shadow: 0 8px 18px rgba(15, 63, 180, 0.1);
+  background: linear-gradient(135deg, #d7e4ff, #eef3ff);
+  box-shadow: 0 8px 18px rgba(24, 69, 200, 0.12);
 }
 
 .ai-switch-label {
   font-weight: 600;
-  color: #3f4a5f;
+  color: #2c3851;
   font-size: 12px;
   width: 50%;
   text-align: center;
@@ -437,8 +435,8 @@ button {
   width: 88px;
   height: 36px;
   border-radius: 18px;
-  background: linear-gradient(135deg, #1b5cff, #124ad6);
-  box-shadow: 0 10px 22px rgba(15, 63, 180, 0.25);
+  background: linear-gradient(135deg, #1e5fe5, #1648bd);
+  box-shadow: 0 10px 22px rgba(22, 72, 190, 0.25);
   transition: transform 0.2s ease, width 0.2s ease;
   z-index: 0;
 }
@@ -467,10 +465,10 @@ button {
   min-width: 120px;
   width: 100%;
   align-self: stretch;
-  height: 48px;
+  height: 56px;
   padding: 0 18px;
   font-size: 16px;
-  margin-top: 4px;
+  margin-top: 0;
 }
 
 .ai-answer .note {
@@ -492,7 +490,7 @@ button {
 }
 
 .ai-question textarea {
-  min-height: 62px;
+  min-height: 58px;
   padding: 12px;
   border-radius: 12px;
   border: 1px solid #dfe4ef;

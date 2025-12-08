@@ -330,7 +330,6 @@ function setAiMode(mode) {
   if (aiModeToggle) {
     aiModeToggle.checked = mode === "fast";
   }
-  setAiStatus(`Mode: ${aiModes[mode].label}`);
 }
 
 function buildSectionMenu() {
