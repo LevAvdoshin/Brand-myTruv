@@ -535,6 +535,7 @@ async function askAi() {
   aiSubmitButton.textContent = "Asking…";
   const modeConfig = aiModes[activeAiMode] || aiModes.deep;
   setAiStatus(`Thinking… ${modeConfig.label}`);
+  aiAnswer.classList.remove("hidden");
   aiAnswer.innerHTML = `<p class="note">Working on it…</p>`;
 
   try {
