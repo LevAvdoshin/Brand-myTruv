@@ -52,18 +52,15 @@ body {
   margin-bottom: 10px;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
-  gap: 16px;
-  align-items: center;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .hero-top {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
 }
 
 h1 {
@@ -90,7 +87,9 @@ h2 {
 .lede {
   margin: 8px 0 20px;
   color: #1f2937;
-  max-width: 780px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .eyebrow {
@@ -143,6 +142,17 @@ h2 {
   gap: 10px;
   flex-wrap: wrap;
   margin-bottom: 10px;
+  justify-content: center;
+}
+
+.hero-inner {
+  max-width: 760px;
+  width: 100%;
+  padding: 16px 18px 20px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 16px;
+  box-shadow: 0 16px 48px rgba(15, 23, 42, 0.1);
 }
 
 .hero-visual {
