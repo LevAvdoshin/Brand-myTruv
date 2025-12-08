@@ -132,6 +132,21 @@ function extractResponseText(data) {
   return texts.join("\n\n").trim();
 }
 
+function escapeHtml(str) {
+  return (str || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+function stringifyPreview(obj, fallback = "") {
+  try {
+    return JSON.stringify(obj, null, 2);
+  } catch {
+    return fallback || "";
+  }
+}
+
 function setAiStatus(message, type = "") {
   if (!aiStatus) return;
   aiStatus.textContent = message;
@@ -440,13 +455,27 @@ async function askAi() {
     }
 
     const data = parsed;
+    console.log("AI response", { status: response.status, body: data, raw });
     const text = extractResponseText(data);
     if (text) {
       aiAnswer.innerHTML = marked.parse(text);
       setAiStatus("Done.", "success");
     } else {
-      aiAnswer.innerHTML = `<p class="note">No answer returned.</p>`;
-      setAiStatus("No answer returned.", "error");
+      const statusField = data?.status || "unknown";
+      const preview = stringifyPreview(
+        {
+          status: statusField,
+          output: data?.output,
+          error: data?.error,
+          message: data?.message,
+        },
+        raw?.slice(0, 800)
+      );
+      aiAnswer.innerHTML = `
+        <p class="note">No answer returned. Status: ${statusField}. Debug below:</p>
+        <pre class="note">${escapeHtml(preview).slice(0, 2000)}</pre>
+      `;
+      setAiStatus("No answer returned (see debug).", "error");
     }
   } catch (error) {
     const message = error?.message || "Request failed.";
