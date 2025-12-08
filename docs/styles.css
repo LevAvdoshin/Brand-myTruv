@@ -135,6 +135,21 @@ h2 {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.hero-visual {
+  margin-top: 10px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 16px 40px rgba(12, 23, 45, 0.18);
+}
+
+.hero-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
 }
 
 button {
@@ -189,7 +204,7 @@ button {
 .layout {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 56px;
 }
 
 .footer.panel {
@@ -201,6 +216,34 @@ button {
   background: linear-gradient(135deg, #0f1f4a, #0b3b9c);
   color: #e5ecff;
   padding: 32px 24px 36px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.footer.panel::before,
+.footer.panel::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.18;
+  filter: blur(20px);
+}
+
+.footer.panel::before {
+  width: 280px;
+  height: 280px;
+  background: rgba(255, 255, 255, 0.1);
+  top: -80px;
+  right: -90px;
+}
+
+.footer.panel::after {
+  width: 220px;
+  height: 220px;
+  background: rgba(255, 255, 255, 0.08);
+  bottom: -100px;
+  left: -40px;
 }
 
 .footer {
@@ -226,8 +269,23 @@ button {
 
 .footer-columns {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 20px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.footer-col:last-child {
+  text-align: right;
+  align-items: flex-end;
+}
+
+.footer-col:last-child .footer-link {
+  text-align: right;
 }
 
 .footer-head {
@@ -254,6 +312,28 @@ button {
   margin-top: 6px;
   font-size: 13px;
   color: #c9d4ff;
+}
+
+.footer-contact {
+  display: grid;
+  gap: 6px;
+  margin-top: 4px;
+  font-size: 13px;
+  color: #e5ecff;
+}
+
+.footer-contact a {
+  color: #e7edff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-contact a:hover {
+  text-decoration: underline;
+}
+
+.footer-contact .contact-name {
+  font-weight: 700;
 }
 
 .panel {

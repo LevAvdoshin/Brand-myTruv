@@ -95,7 +95,7 @@ const aiAnswer = document.getElementById("ai-answer");
 const aiSuggestionButtons = document.querySelectorAll("#ai-suggestions .chip");
 const aiModeToggle = document.getElementById("ai-mode-toggle");
 
-let activeDoc = docs[0];
+let activeDoc = null;
 let activeTopId;
 let headingObserver;
 let activeAiMode = "fast";
@@ -231,7 +231,8 @@ function renderDocList() {
     const doc = docsMap[docId];
     if (!doc) return null;
     const button = document.createElement("button");
-    button.className = `doc-card${doc.id === activeDoc.id ? " active" : ""}`;
+    const isActive = activeDoc && doc.id === activeDoc.id;
+    button.className = `doc-card${isActive ? " active" : ""}`;
     button.dataset.docId = doc.id;
     button.innerHTML = `
       <p class="title">${stripEmojis(doc.title)}</p>
@@ -655,7 +656,7 @@ footerLinks.forEach((link) => {
 });
 
 renderDocList();
-loadDoc(activeDoc.id);
+// Load a doc only after user interaction; keep preview hidden by default.
 
 // Back to top
 const backToTop = document.getElementById("back-to-top");
