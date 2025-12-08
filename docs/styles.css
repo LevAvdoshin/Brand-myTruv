@@ -66,6 +66,13 @@ h1 {
   letter-spacing: -0.02em;
 }
 
+.hero-sub {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1f2937;
+}
+
 h2 {
   font-family: "Poppins", "Inter", "Helvetica Neue", Arial, sans-serif;
   margin: 6px 0;
