@@ -384,12 +384,15 @@ button {
   padding: 10px 12px;
   border-radius: 10px;
   border: 1px solid #dfe4ef;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.76);
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  color: #9aa3b5;
 }
 
 .key-label {
   white-space: nowrap;
+  color: #9aa3b5;
+  font-weight: 600;
 }
 
 .ai-input-row {
