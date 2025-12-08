@@ -238,7 +238,7 @@ function renderDocList() {
       <p class="desc">${doc.description}</p>
       <span class="badge">${doc.badge}</span>
     `;
-    button.addEventListener("click", () => loadDoc(doc.id));
+    button.addEventListener("click", () => loadDoc(doc.id, { fromUser: true }));
     return button;
   };
 
@@ -268,7 +268,7 @@ function renderDocList() {
         const chip = document.createElement("button");
         chip.className = "doc-chip";
         chip.textContent = doc.title;
-        chip.addEventListener("click", () => loadDoc(doc.id));
+        chip.addEventListener("click", () => loadDoc(doc.id, { fromUser: true }));
         quick.appendChild(chip);
       });
     }
