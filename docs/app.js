@@ -147,6 +147,41 @@ function stringifyPreview(obj, fallback = "") {
   }
 }
 
+function delay(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function pollResponseStatus(responseId, key, attempts = 4, interval = 1200) {
+  let last = null;
+  const url = `${aiConfig.endpoint.replace(/\/$/, "")}/${responseId}`;
+
+  for (let i = 0; i < attempts; i += 1) {
+    await delay(interval);
+    try {
+      const res = await fetch(url, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${key}`,
+        },
+      });
+      const raw = await res.text();
+      const parsed = raw ? (() => { try { return JSON.parse(raw); } catch { return null; } })() : null;
+      last = { res, parsed, raw };
+      if (!res.ok) {
+        return last;
+      }
+      const status = parsed?.status;
+      if (status && status !== "incomplete" && status !== "in_progress") {
+        return last;
+      }
+    } catch (err) {
+      last = { res: null, parsed: null, raw: String(err || "poll error") };
+      return last;
+    }
+  }
+  return last;
+}
+
 function setAiStatus(message, type = "") {
   if (!aiStatus) return;
   aiStatus.textContent = message;
@@ -454,25 +489,38 @@ async function askAi() {
       throw new Error(`API error ${response.status}: ${reason}`);
     }
 
-    const data = parsed;
+    let data = parsed;
     console.log("AI response", { status: response.status, body: data, raw });
+
+    // If the response is still running, try to poll a final result briefly.
+    const statusField = data?.status;
+    const responseId = data?.id || data?.output?.find((item) => item?.id)?.id;
+    if (responseId && (statusField === "incomplete" || statusField === "in_progress")) {
+      const polled = await pollResponseStatus(responseId, key);
+      if (polled?.parsed) {
+        data = polled.parsed;
+        console.log("AI poll response", { body: data, raw: polled.raw });
+      }
+    }
+
     const text = extractResponseText(data);
     if (text) {
       aiAnswer.innerHTML = marked.parse(text);
       setAiStatus("Done.", "success");
     } else {
-      const statusField = data?.status || "unknown";
+      const statusValue = data?.status || "unknown";
       const preview = stringifyPreview(
         {
-          status: statusField,
+          status: statusValue,
           output: data?.output,
           error: data?.error,
           message: data?.message,
+          id: data?.id,
         },
         raw?.slice(0, 800)
       );
       aiAnswer.innerHTML = `
-        <p class="note">No answer returned. Status: ${statusField}. Debug below:</p>
+        <p class="note">No answer returned. Status: ${statusValue}. Debug below:</p>
         <pre class="note">${escapeHtml(preview).slice(0, 2000)}</pre>
       `;
       setAiStatus("No answer returned (see debug).", "error");
