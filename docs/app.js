@@ -102,6 +102,10 @@ const aiConfig = {
   system:
     "You are an assistant for myTruv brand documentation. Answer concisely and focus on brand, messaging, personas, SEO, and product positioning based only on provided context. If unsure, say you are unsure.",
   maxTokens: 600,
+  poll: {
+    attempts: 24,
+    intervalMs: 5000,
+  },
 };
 
 function buildResponseInput(question, context) {
@@ -151,7 +155,7 @@ function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function pollResponseStatus(responseId, key, attempts = 12, interval = 2500) {
+async function pollResponseStatus(responseId, key, attempts = aiConfig.poll.attempts, interval = aiConfig.poll.intervalMs) {
   let last = null;
   const url = `${aiConfig.endpoint.replace(/\/$/, "")}/${responseId}`;
 
@@ -494,7 +498,11 @@ async function askAi() {
 
     // If the response is still running, try to poll a final result briefly.
     const statusField = data?.status;
-    const responseId = data?.id || data?.output?.find((item) => item?.id)?.id;
+    const responseId = data?.id || data?.response_id || data?.response?.id;
+    const outputIds = Array.isArray(data?.output)
+      ? data.output.map((item) => item?.id).filter(Boolean)
+      : [];
+
     if (responseId && (statusField === "incomplete" || statusField === "in_progress")) {
       setAiStatus("Model is still thinking… waiting for completion.", "error");
       const polled = await pollResponseStatus(responseId, key);
@@ -517,6 +525,8 @@ async function askAi() {
           error: data?.error,
           message: data?.message,
           id: data?.id,
+          response_id: data?.response_id,
+          output_ids: outputIds,
         },
         raw?.slice(0, 800)
       );
