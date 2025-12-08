@@ -83,6 +83,7 @@ const docRoot = document.getElementById("doc-root");
 const docTitle = document.getElementById("doc-title");
 const docDesc = document.getElementById("doc-desc");
 const heroButtons = document.querySelectorAll("[data-doc]");
+const footerLinks = document.querySelectorAll(".footer-link[data-doc]");
 const sectionMenu = document.getElementById("section-menu");
 const flowDiagram = document.getElementById("flow-diagram");
 const contentPanel = document.querySelector(".content");
@@ -640,6 +641,18 @@ if (aiModeToggle) {
   aiModeToggle.addEventListener("change", () => setAiMode(aiModeToggle.checked ? "deep" : "fast"));
   setAiMode(activeAiMode);
 }
+
+footerLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const target = link.dataset.doc;
+    if (target) {
+      loadDoc(target, { fromUser: true }).then(() => {
+        window.scrollTo({ top: document.querySelector(".content")?.offsetTop || 0, behavior: "smooth" });
+      });
+    }
+  });
+});
 
 renderDocList();
 loadDoc(activeDoc.id);

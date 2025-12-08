@@ -193,20 +193,20 @@ button {
 }
 
 .footer.panel {
-  width: calc(100vw - 40px);
-  margin: 0 -20px;
+  width: 100vw;
+  margin: 0 calc(50% - 50vw);
   border-radius: 0;
   border: none;
   box-shadow: none;
   background: linear-gradient(135deg, #0f1f4a, #0b3b9c);
   color: #e5ecff;
-  padding: 28px 20px 32px;
+  padding: 32px 24px 36px;
 }
 
 .footer {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 14px;
+  gap: 16px;
 }
 
 .footer-title {
@@ -219,22 +219,23 @@ button {
 .footer-columns {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 14px;
+  gap: 20px;
 }
 
 .footer-head {
   font-weight: 600;
-  margin: 0 0 8px;
+  margin: 0 0 10px;
   color: #d4ddff;
 }
 
 .footer-link {
   display: block;
-  margin: 4px 0;
+  margin: 6px 0;
   color: #e7edff;
   text-decoration: none;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 .footer-link:hover {
@@ -242,7 +243,7 @@ button {
 }
 
 .footer-bottom {
-  margin-top: 4px;
+  margin-top: 6px;
   font-size: 13px;
   color: #c9d4ff;
 }
