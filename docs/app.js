@@ -420,11 +420,24 @@ async function askAi() {
       }),
     });
 
+    const raw = await response.text();
+    const parsed = raw ? (() => { try { return JSON.parse(raw); } catch { return null; } })() : null;
+
     if (!response.ok) {
-      throw new Error(`API error ${response.status}`);
+      const reason =
+        parsed?.error?.message ||
+        parsed?.message ||
+        raw?.slice(0, 500) ||
+        `Unexpected ${response.status} from AI API`;
+      console.error("AI request failed", {
+        status: response.status,
+        statusText: response.statusText,
+        body: raw,
+      });
+      throw new Error(`API error ${response.status}: ${reason}`);
     }
 
-    const data = await response.json();
+    const data = parsed;
     const text = extractResponseText(data);
     if (text) {
       aiAnswer.innerHTML = marked.parse(text);
