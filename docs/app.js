@@ -151,7 +151,7 @@ function delay(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function pollResponseStatus(responseId, key, attempts = 4, interval = 1200) {
+async function pollResponseStatus(responseId, key, attempts = 12, interval = 2500) {
   let last = null;
   const url = `${aiConfig.endpoint.replace(/\/$/, "")}/${responseId}`;
 
@@ -496,6 +496,7 @@ async function askAi() {
     const statusField = data?.status;
     const responseId = data?.id || data?.output?.find((item) => item?.id)?.id;
     if (responseId && (statusField === "incomplete" || statusField === "in_progress")) {
+      setAiStatus("Model is still thinking… waiting for completion.", "error");
       const polled = await pollResponseStatus(responseId, key);
       if (polled?.parsed) {
         data = polled.parsed;
@@ -519,11 +520,15 @@ async function askAi() {
         },
         raw?.slice(0, 800)
       );
+      const stillRunning = statusValue === "incomplete" || statusValue === "in_progress";
+      const helpText = stillRunning
+        ? "Model is still running; it can take longer. You can retry in a few seconds."
+        : "No answer returned. Check debug info below.";
       aiAnswer.innerHTML = `
-        <p class="note">No answer returned. Status: ${statusValue}. Debug below:</p>
+        <p class="note">${helpText} Status: ${statusValue}. Debug below:</p>
         <pre class="note">${escapeHtml(preview).slice(0, 2000)}</pre>
       `;
-      setAiStatus("No answer returned (see debug).", "error");
+      setAiStatus(helpText, "error");
     }
   } catch (error) {
     const message = error?.message || "Request failed.";
