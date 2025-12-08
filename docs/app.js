@@ -107,8 +107,8 @@ const aiConfig = {
 function buildResponseInput(question, context) {
   const userText = `${question}\n\nContext (from current doc):\n${context || "No context loaded."}`;
   return [
-    { role: "system", content: [{ type: "text", text: aiConfig.system }] },
-    { role: "user", content: [{ type: "text", text: userText }] },
+    { role: "system", content: [{ type: "input_text", text: aiConfig.system }] },
+    { role: "user", content: [{ type: "input_text", text: userText }] },
   ];
 }
 
