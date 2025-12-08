@@ -112,8 +112,8 @@ const aiConfig = {
 };
 
 const aiModes = {
-  deep: { model: "gpt-5-pro-2025-10-06", label: "Deep - GPT-5 Pro" },
-  fast: { model: "gpt-5.1", label: "Fast answer - GPT-5.1" },
+  deep: { model: "gpt-5-pro-2025-10-06", label: "Deep (GPT-5 Pro)" },
+  fast: { model: "gpt-5.1", label: "Fast (GPT-5.1)" },
 };
 
 function buildResponseInput(question, context) {
@@ -330,7 +330,7 @@ function setAiMode(mode) {
   if (aiModeToggle) {
     aiModeToggle.checked = mode === "fast";
   }
-  setAiStatus(`Ask about myTruv - ${aiModes[mode].label}`);
+  setAiStatus(`Mode: ${aiModes[mode].label}`);
 }
 
 function buildSectionMenu() {
@@ -534,7 +534,7 @@ async function askAi() {
   aiSubmitButton.disabled = true;
   aiSubmitButton.textContent = "Asking…";
   const modeConfig = aiModes[activeAiMode] || aiModes.deep;
-  setAiStatus(`Thinking… - ${modeConfig.label}`);
+  setAiStatus(`Thinking… ${modeConfig.label}`);
   aiAnswer.innerHTML = `<p class="note">Working on it…</p>`;
 
   try {
