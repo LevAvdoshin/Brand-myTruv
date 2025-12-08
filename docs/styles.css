@@ -395,6 +395,7 @@ button {
   align-items: center;
   justify-content: flex-end;
   min-width: 240px;
+  margin-top: -60px;
 }
 
 .ai-switch {
