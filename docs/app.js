@@ -97,12 +97,28 @@ let activeTopId;
 let headingObserver;
 
 const aiConfig = {
-  endpoint: "https://api.openai.com/v1/chat/completions",
-  model: "gpt-5-pro",
+  endpoint: "https://api.openai.com/v1/responses",
+  model: "gpt-5-pro-2025-10-06",
   system:
     "You are an assistant for myTruv brand documentation. Answer concisely and focus on brand, messaging, personas, SEO, and product positioning based only on provided context. If unsure, say you are unsure.",
   maxTokens: 600,
 };
+
+function extractResponseText(data) {
+  if (!data) return "";
+  if (typeof data.output_text === "string") return data.output_text.trim();
+  const outputs = Array.isArray(data.output) ? data.output : [];
+  const texts = outputs
+    .map((item) => {
+      if (!Array.isArray(item?.content)) return "";
+      return item.content
+        .map((part) => (part.type === "text" ? part.text : ""))
+        .filter(Boolean)
+        .join(" ");
+    })
+    .filter(Boolean);
+  return texts.join("\n\n").trim();
+}
 
 function setAiStatus(message, type = "") {
   if (!aiStatus) return;
@@ -389,14 +405,14 @@ async function askAi() {
       },
       body: JSON.stringify({
         model: aiConfig.model,
-        messages: [
+        input: [
           { role: "system", content: aiConfig.system },
           {
             role: "user",
             content: `${question}\n\nContext (from current doc):\n${context || "No context loaded."}`,
           },
         ],
-        max_tokens: aiConfig.maxTokens,
+        max_output_tokens: aiConfig.maxTokens,
         temperature: 0.2,
       }),
     });
@@ -406,7 +422,7 @@ async function askAi() {
     }
 
     const data = await response.json();
-    const text = data?.choices?.[0]?.message?.content?.trim();
+    const text = extractResponseText(data);
     if (text) {
       aiAnswer.innerHTML = marked.parse(text);
       setAiStatus("Done.", "success");
