@@ -196,7 +196,8 @@ async function pollResponseStatus(responseId, key, attempts = aiConfig.poll.atte
 
 function setAiStatus(message, type = "") {
   if (!aiStatus) return;
-  aiStatus.classList.remove("hidden");
+  // Keep status hidden to avoid cluttering the UI.
+  aiStatus.classList.add("hidden");
   aiStatus.textContent = message;
   aiStatus.classList.remove("error", "success");
   if (type) aiStatus.classList.add(type);
