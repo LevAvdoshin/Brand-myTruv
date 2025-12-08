@@ -98,7 +98,7 @@ let headingObserver;
 
 const aiConfig = {
   endpoint: "https://api.openai.com/v1/chat/completions",
-  model: "gpt-4o-mini",
+  model: "gpt-5-pro",
   system:
     "You are an assistant for myTruv brand documentation. Answer concisely and focus on brand, messaging, personas, SEO, and product positioning based only on provided context. If unsure, say you are unsure.",
   maxTokens: 600,
