@@ -344,6 +344,25 @@ button {
   border: 1px solid rgba(37, 99, 235, 0.16);
   box-shadow: 0 16px 44px rgba(37, 99, 235, 0.14);
   border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-box::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 30% 30%, rgba(64, 120, 255, 0.08), transparent 55%),
+    radial-gradient(circle at 70% 70%, rgba(19, 72, 210, 0.08), transparent 60%);
+  filter: blur(2px);
+  animation: aiGlow 12s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.ai-box > * {
+  position: relative;
+  z-index: 1;
 }
 
 .ai-header {
@@ -396,6 +415,15 @@ button {
   justify-content: flex-end;
   min-width: 240px;
   margin-top: -30px;
+}
+
+@keyframes aiGlow {
+  0% {
+    transform: translate(-6%, -4%) rotate(0deg);
+  }
+  100% {
+    transform: translate(6%, 4%) rotate(2deg);
+  }
 }
 
 .ai-switch {
