@@ -192,39 +192,59 @@ button {
   gap: 32px;
 }
 
+.footer.panel {
+  width: calc(100vw - 40px);
+  margin: 0 -20px;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  background: linear-gradient(135deg, #0f1f4a, #0b3b9c);
+  color: #e5ecff;
+  padding: 28px 20px 32px;
+}
+
 .footer {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 12px;
+  gap: 14px;
 }
 
 .footer-title {
   font-size: 18px;
   font-weight: 700;
   margin: 4px 0 0;
+  color: #f5f7ff;
 }
 
 .footer-columns {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
 }
 
 .footer-head {
-  font-weight: 700;
-  margin: 0 0 6px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: #d4ddff;
 }
 
 .footer-link {
-  display: inline-block;
-  margin: 2px 0;
-  color: #1f4cd7;
+  display: block;
+  margin: 4px 0;
+  color: #e7edff;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .footer-link:hover {
   text-decoration: underline;
+}
+
+.footer-bottom {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #c9d4ff;
 }
 
 .panel {
