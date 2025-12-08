@@ -387,10 +387,10 @@ button {
 .ai-actions {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  align-items: flex-end;
+  gap: 8px;
+  align-items: stretch;
   justify-content: flex-end;
-  min-width: 200px;
+  min-width: 220px;
 }
 
 .ai-switch {
@@ -410,8 +410,8 @@ button {
   align-items: center;
   gap: 0;
   padding: 2px;
-  width: 140px;
-  height: 36px;
+  width: 170px;
+  height: 38px;
   border: 1px solid #d7e3ff;
   border-radius: 18px;
   background: linear-gradient(135deg, #eef3ff, #f7faff);
@@ -433,8 +433,8 @@ button {
   position: absolute;
   left: 2px;
   top: 2px;
-  width: 68px;
-  height: 32px;
+  width: 82px;
+  height: 34px;
   border-radius: 16px;
   background: linear-gradient(135deg, #0b62ff, #0d47d9);
   box-shadow: 0 10px 22px rgba(15, 63, 180, 0.25);
@@ -443,22 +443,36 @@ button {
 }
 
 .ai-switch input:checked + .ai-switch-track .ai-switch-handle {
-  transform: translateX(68px);
+  transform: translateX(84px);
 }
 
 .ai-switch input:checked + .ai-switch-track .ai-switch-label-left {
-  color: #4b5563;
+  color: #e5edff;
 }
 
 .ai-switch input:not(:checked) + .ai-switch-track .ai-switch-label-right {
-  color: #4b5563;
+  color: #e5edff;
 }
 
 .ai-switch input:checked + .ai-switch-track .ai-switch-label-right {
-  color: #0f172a;
+  color: #ffffff;
 }
 
 .ai-switch input:not(:checked) + .ai-switch-track .ai-switch-label-left {
+  color: #ffffff;
+}
+
+.ai-submit {
+  min-width: 120px;
+  width: 100%;
+  align-self: stretch;
+  height: 48px;
+  padding: 0 18px;
+  font-size: 16px;
+}
+
+.ai-answer .note {
+  font-weight: 700;
   color: #0f172a;
 }
 
