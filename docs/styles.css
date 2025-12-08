@@ -349,7 +349,7 @@ button {
 .ai-header {
   display: grid;
   grid-template-columns: 1fr 260px;
-  gap: 8px;
+  gap: 6px;
   align-items: start;
 }
 
@@ -371,7 +371,7 @@ button {
 .ai-input-row {
   display: flex;
   gap: 12px;
-  margin-top: 2px;
+  margin-top: 0;
   align-items: stretch;
   flex-wrap: wrap;
 }
@@ -471,7 +471,7 @@ button {
   margin-top: 0;
   border-radius: 999px;
   display: inline-flex;
-  gap: 8px;
+  gap: 0;
   align-items: center;
   justify-content: center;
 }
