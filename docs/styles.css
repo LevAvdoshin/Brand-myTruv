@@ -272,6 +272,7 @@ button {
 .footer.panel {
   width: 100vw;
   margin: 0 calc(50% - 50vw);
+  margin-top: auto;
   border-radius: 0;
   border: none;
   box-shadow: none;
@@ -321,6 +322,10 @@ button {
   display: grid;
   gap: 16px;
   padding-bottom: 10px;
+}
+
+.footer .eyebrow {
+  color: #bfc9f1;
 }
 
 .footer-title {
