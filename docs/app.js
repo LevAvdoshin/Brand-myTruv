@@ -120,7 +120,11 @@ function extractResponseText(data) {
     .map((item) => {
       if (!Array.isArray(item?.content)) return "";
       return item.content
-        .map((part) => (part.type === "text" ? part.text : ""))
+        .map((part) => {
+          if (part.type === "output_text") return part.text || "";
+          if (part.type === "refusal") return part.text || "";
+          return "";
+        })
         .filter(Boolean)
         .join(" ");
     })
@@ -415,7 +419,6 @@ async function askAi() {
         model: aiConfig.model,
         input: buildResponseInput(question, context),
         max_output_tokens: aiConfig.maxTokens,
-        temperature: 0.2,
       }),
     });
 
