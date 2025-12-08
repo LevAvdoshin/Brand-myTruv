@@ -63,10 +63,14 @@
         </div>
         <div class="ai-actions">
           <label class="note tiny">Mode</label>
-          <div class="ai-mode-buttons">
-            <button class="ai-mode active" type="button" data-ai-mode="deep">Deep</button>
-            <button class="ai-mode" type="button" data-ai-mode="fast">Fast answer</button>
-          </div>
+          <label class="ai-switch" aria-label="AI mode toggle">
+            <input type="checkbox" id="ai-mode-toggle" />
+            <span class="ai-switch-track">
+              <span class="ai-switch-label ai-switch-label-left">Deep</span>
+              <span class="ai-switch-handle"></span>
+              <span class="ai-switch-label ai-switch-label-right">Fast</span>
+            </span>
+          </label>
           <button class="primary ai-submit" id="ai-submit" type="button">Ask</button>
         </div>
       </div>

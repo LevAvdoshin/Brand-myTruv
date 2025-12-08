@@ -393,31 +393,59 @@ button {
   min-width: 200px;
 }
 
-.ai-mode-buttons {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-.ai-mode {
-  padding: 8px 12px;
-  border-radius: 10px;
-  border: 1px solid #dfe4ef;
-  background: #fff;
-  font-weight: 600;
+.ai-switch {
+  display: inline-flex;
+  align-items: center;
   cursor: pointer;
-  transition: all 0.15s ease;
+  user-select: none;
 }
 
-.ai-mode.active {
-  background: #111827;
-  color: #fff;
-  border-color: #111827;
+.ai-switch input {
+  display: none;
 }
 
-.ai-mode:hover {
-  border-color: #111827;
+.ai-switch-track {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+  border: 1px solid #dfe4ef;
+  border-radius: 14px;
+  background: #fff;
+  min-width: 160px;
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+.ai-switch-label {
+  font-weight: 600;
+  color: #1f2937;
+  font-size: 13px;
+}
+
+.ai-switch-handle {
+  position: absolute;
+  left: 10px;
+  top: 4px;
+  width: 72px;
+  height: 28px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0b62ff, #0f3fb4);
+  box-shadow: 0 6px 18px rgba(15, 63, 180, 0.25);
+  transition: transform 0.2s ease, width 0.2s ease;
+  z-index: 0;
+}
+
+.ai-switch input:checked + .ai-switch-track .ai-switch-handle {
+  transform: translateX(78px);
+}
+
+.ai-switch input:checked + .ai-switch-track .ai-switch-label-left {
+  color: #4b5563;
+}
+
+.ai-switch input:not(:checked) + .ai-switch-track .ai-switch-label-right {
+  color: #4b5563;
 }
 
 .ai-suggestions {

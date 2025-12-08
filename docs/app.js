@@ -91,7 +91,7 @@ const aiSubmitButton = document.getElementById("ai-submit");
 const aiStatus = document.getElementById("ai-status");
 const aiAnswer = document.getElementById("ai-answer");
 const aiSuggestionButtons = document.querySelectorAll("#ai-suggestions .chip");
-const aiModeButtons = document.querySelectorAll("[data-ai-mode]");
+const aiModeToggle = document.getElementById("ai-mode-toggle");
 
 let activeDoc = docs[0];
 let activeTopId;
@@ -327,9 +327,9 @@ function stripEmojis(text) {
 function setAiMode(mode) {
   if (!aiModes[mode]) return;
   activeAiMode = mode;
-  aiModeButtons.forEach((btn) => {
-    btn.classList.toggle("active", btn.dataset.aiMode === mode);
-  });
+  if (aiModeToggle) {
+    aiModeToggle.checked = mode === "fast";
+  }
   setAiStatus(`Ask about myTruv - ${aiModes[mode].label}`);
 }
 
@@ -630,10 +630,8 @@ aiSuggestionButtons.forEach((btn) => {
   });
 });
 
-aiModeButtons.forEach((btn) => {
-  btn.addEventListener("click", () => setAiMode(btn.dataset.aiMode));
-});
-if (aiModeButtons.length) {
+if (aiModeToggle) {
+  aiModeToggle.addEventListener("change", () => setAiMode(aiModeToggle.checked ? "fast" : "deep"));
   setAiMode(activeAiMode);
 }
 
