@@ -97,6 +97,7 @@ let activeDoc = docs[0];
 let activeTopId;
 let headingObserver;
 let activeAiMode = "deep";
+const FALLBACK_MODE = "fast";
 
 const aiConfig = {
   endpoint: "https://api.openai.com/v1/responses",
@@ -418,6 +419,63 @@ function buildSectionMenu() {
   });
 }
 
+async function runAiRequest(modeKey, question, context, key) {
+  const modeConfig = aiModes[modeKey] || aiModes.deep;
+  const response = await fetch(aiConfig.endpoint, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${key}`,
+    },
+    body: JSON.stringify({
+      model: modeConfig.model,
+      input: buildResponseInput(question, context),
+      max_output_tokens: aiConfig.maxTokens,
+    }),
+  });
+
+  const raw = await response.text();
+  const parsed = raw ? (() => { try { return JSON.parse(raw); } catch { return null; } })() : null;
+
+  if (!response.ok) {
+    const reason =
+      parsed?.error?.message ||
+      parsed?.message ||
+      raw?.slice(0, 500) ||
+      `Unexpected ${response.status} from AI API`;
+    console.error("AI request failed", {
+      status: response.status,
+      statusText: response.statusText,
+      body: raw,
+      mode: modeConfig.label,
+    });
+    throw new Error(`API error ${response.status}: ${reason}`);
+  }
+
+  let data = parsed;
+  console.log("AI response", { status: response.status, body: data, raw, mode: modeConfig.label });
+
+  const statusField = data?.status;
+  const responseId = data?.id || data?.response_id || data?.response?.id;
+  const outputIds = Array.isArray(data?.output)
+    ? data.output.map((item) => item?.id).filter(Boolean)
+    : [];
+
+  if (responseId && (statusField === "incomplete" || statusField === "in_progress")) {
+    setAiStatus("Model is still thinking… waiting for completion.", "error");
+    const polled = await pollResponseStatus(responseId, key);
+    if (polled?.parsed) {
+      data = polled.parsed;
+      console.log("AI poll response", { body: data, raw: polled.raw, mode: modeConfig.label });
+    }
+  }
+
+  const text = extractResponseText(data);
+  const statusValue = data?.status || "unknown";
+
+  return { text, data, raw, statusValue, outputIds, modeLabel: modeConfig.label };
+}
+
 async function loadDoc(docId, opts = {}) {
   const doc = docs.find((item) => item.id === docId);
   if (!doc) return;
@@ -480,83 +538,51 @@ async function askAi() {
   aiAnswer.innerHTML = `<p class="note">Working on it…</p>`;
 
   try {
-    const modeConfig = aiModes[activeAiMode] || aiModes.deep;
-    const response = await fetch(aiConfig.endpoint, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${key}`,
-      },
-      body: JSON.stringify({
-        model: modeConfig.model,
-        input: buildResponseInput(question, context),
-        max_output_tokens: aiConfig.maxTokens,
-      }),
-    });
-
-    const raw = await response.text();
-    const parsed = raw ? (() => { try { return JSON.parse(raw); } catch { return null; } })() : null;
-
-    if (!response.ok) {
-      const reason =
-        parsed?.error?.message ||
-        parsed?.message ||
-        raw?.slice(0, 500) ||
-        `Unexpected ${response.status} from AI API`;
-      console.error("AI request failed", {
-        status: response.status,
-        statusText: response.statusText,
-        body: raw,
-      });
-      throw new Error(`API error ${response.status}: ${reason}`);
-    }
-
-    let data = parsed;
-    console.log("AI response", { status: response.status, body: data, raw, mode: modeConfig.label });
-
-    // If the response is still running, try to poll a final result briefly.
-    const statusField = data?.status;
-    const responseId = data?.id || data?.response_id || data?.response?.id;
-    const outputIds = Array.isArray(data?.output)
-      ? data.output.map((item) => item?.id).filter(Boolean)
-      : [];
-
-    if (responseId && (statusField === "incomplete" || statusField === "in_progress")) {
-      setAiStatus("Model is still thinking… waiting for completion.", "error");
-      const polled = await pollResponseStatus(responseId, key);
-      if (polled?.parsed) {
-        data = polled.parsed;
-        console.log("AI poll response", { body: data, raw: polled.raw });
-      }
-    }
-
-    const text = extractResponseText(data);
-    if (text) {
-      aiAnswer.innerHTML = marked.parse(text);
+    const first = await runAiRequest(activeAiMode, question, context, key);
+    if (first.text) {
+      aiAnswer.innerHTML = marked.parse(first.text);
       setAiStatus("Done.", "success");
+    } else if ((first.statusValue === "incomplete" || first.statusValue === "in_progress") && activeAiMode === "deep") {
+      setAiStatus("Deep is slow; switching to Fast answer (GPT-5.1).", "error");
+      const fallback = await runAiRequest(FALLBACK_MODE, question, context, key);
+      if (fallback.text) {
+        aiAnswer.innerHTML = marked.parse(fallback.text);
+        setAiStatus("Done (fast fallback).", "success");
+      } else {
+        const preview = stringifyPreview(
+          {
+            status: fallback.statusValue,
+            output: fallback.data?.output,
+            error: fallback.data?.error,
+            message: fallback.data?.message,
+            mode: fallback.modeLabel,
+            output_ids: fallback.outputIds,
+          },
+          fallback.raw?.slice(0, 800)
+        );
+        aiAnswer.innerHTML = `
+          <p class="note">No answer returned, even after fast fallback. Status: ${fallback.statusValue}. Debug below:</p>
+          <pre class="note">${escapeHtml(preview).slice(0, 2000)}</pre>
+        `;
+        setAiStatus("No answer from deep or fast (see debug).", "error");
+      }
     } else {
-      const statusValue = data?.status || "unknown";
       const preview = stringifyPreview(
         {
-          status: statusValue,
-          output: data?.output,
-          error: data?.error,
-          message: data?.message,
-          id: data?.id,
-          response_id: data?.response_id,
-          output_ids: outputIds,
+          status: first.statusValue,
+          output: first.data?.output,
+          error: first.data?.error,
+          message: first.data?.message,
+          mode: first.modeLabel,
+          output_ids: first.outputIds,
         },
-        raw?.slice(0, 800)
+        first.raw?.slice(0, 800)
       );
-      const stillRunning = statusValue === "incomplete" || statusValue === "in_progress";
-      const helpText = stillRunning
-        ? "Model is still running; it can take longer. You can retry in a few seconds."
-        : "No answer returned. Check debug info below.";
       aiAnswer.innerHTML = `
-        <p class="note">${helpText} Status: ${statusValue}. Debug below:</p>
+        <p class="note">No answer returned. Status: ${first.statusValue}. Debug below:</p>
         <pre class="note">${escapeHtml(preview).slice(0, 2000)}</pre>
       `;
-      setAiStatus(helpText, "error");
+      setAiStatus("No answer returned (see debug).", "error");
     }
   } catch (error) {
     const message = error?.message || "Request failed.";
