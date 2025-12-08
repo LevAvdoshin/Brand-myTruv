@@ -415,7 +415,6 @@ async function askAi() {
         model: aiConfig.model,
         input: buildResponseInput(question, context),
         max_output_tokens: aiConfig.maxTokens,
-        response_mode: "blocking",
         temperature: 0.2,
       }),
     });
