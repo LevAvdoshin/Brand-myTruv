@@ -95,7 +95,7 @@ const aiAnswer = document.getElementById("ai-answer");
 const aiSuggestionButtons = document.querySelectorAll("#ai-suggestions .chip");
 const aiModeToggle = document.getElementById("ai-mode-toggle");
 
-let activeDoc = docs[0];
+let activeDoc = null;
 let activeTopId;
 let headingObserver;
 let activeAiMode = "fast";
@@ -656,7 +656,6 @@ footerLinks.forEach((link) => {
 });
 
 renderDocList();
-loadDoc(activeDoc.id, { fromUser: true });
 
 // Back to top
 const backToTop = document.getElementById("back-to-top");
