@@ -304,13 +304,13 @@ button {
 .footer.panel {
   width: 100vw;
   margin: 0 calc(50% - 50vw);
-  margin-top: 2cm;
+  margin-top: 16px;
   border-radius: 0;
   border: none;
   box-shadow: none;
   background: linear-gradient(135deg, #0f1f4a, #0b3b9c);
   color: #e5ecff;
-  padding: 64px 24px calc(64px + 2cm);
+  padding: 48px 24px 56px;
   position: relative;
   overflow: hidden;
 }
