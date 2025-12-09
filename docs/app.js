@@ -565,6 +565,39 @@ async function askAi() {
     context = `${docText}\n\nOther docs:\n${allText}`.slice(0, 20000);
   }
 
+  const brandDocs = [
+    { id: "brand", file: "brand.md" },
+    { id: "positioning", file: "positioning.md" },
+    { id: "messaging", file: "messaging.md" },
+    { id: "personas", file: "personas.md" },
+    { id: "seo", file: "seo.md" },
+  ];
+
+  const brandChunks = [];
+
+  try {
+    for (const doc of brandDocs) {
+      try {
+        const remoteUrl = `${rawBase}/${doc.file}`;
+        const localUrl = `${localBase}/${doc.file}`;
+        let res = await fetch(remoteUrl);
+        if (!res.ok) {
+          res = await fetch(localUrl);
+        }
+        if (res.ok) {
+          const text = await res.text();
+          brandChunks.push(`--- ${doc.id.toUpperCase()} ---\n${text.slice(0, 6000)}`);
+        }
+      } catch {
+        // skip individual doc errors
+      }
+    }
+  } catch {
+    // ignore brand aggregation errors
+  }
+
+  const fullBrandContext = brandChunks.join("\n\n").slice(0, 24000);
+
   aiSubmitButton.disabled = true;
   aiSubmitButton.textContent = "Asking…";
   const modeConfig = aiModes[activeAiMode] || aiModes.deep;
