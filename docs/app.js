@@ -506,6 +506,13 @@ async function loadDoc(docId, opts = {}) {
   const doc = docs.find((item) => item.id === docId);
   if (!doc) return;
 
+  if (opts.fromUser && docRoot) {
+    docRoot.classList.remove("doc-transition");
+    // force reflow to restart animation
+    void docRoot.offsetWidth;
+    docRoot.classList.add("doc-transition");
+  }
+
   activeDoc = doc;
   activeTopId = null;
   setHeader(doc);
