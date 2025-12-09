@@ -100,6 +100,7 @@ let activeTopId;
 let headingObserver;
 let activeAiMode = "fast";
 const FALLBACK_MODE = "fast";
+let allDocsText = "";
 
 const aiConfig = {
   endpoint: "https://api.openai.com/v1/responses",
@@ -124,6 +125,27 @@ function buildResponseInput(question, context) {
     { role: "system", content: [{ type: "input_text", text: aiConfig.system }] },
     { role: "user", content: [{ type: "input_text", text: userText }] },
   ];
+}
+
+async function loadAllDocsText() {
+  if (allDocsText) return allDocsText;
+  const parts = await Promise.all(
+    docs.map(async (doc) => {
+      const cacheBust = `?t=${Date.now()}`;
+      const localUrl = `${localBase}/${doc.file}${cacheBust}`;
+      const remoteUrl = `${rawBase}/${doc.file}${cacheBust}`;
+      try {
+        let res = await fetch(localUrl);
+        if (!res.ok) res = await fetch(remoteUrl);
+        if (!res.ok) return "";
+        return await res.text();
+      } catch {
+        return "";
+      }
+    })
+  );
+  allDocsText = parts.filter(Boolean).join("\n\n").slice(0, 20000);
+  return allDocsText;
 }
 
 function extractResponseText(data) {
@@ -536,7 +558,12 @@ async function askAi() {
     return;
   }
 
-  const context = (docRoot?.textContent || "").trim().slice(0, 8000);
+  const docText = (docRoot?.textContent || "").trim().slice(0, 8000);
+  const allText = await loadAllDocsText();
+  let context = allText;
+  if (docText) {
+    context = `${docText}\n\nOther docs:\n${allText}`.slice(0, 20000);
+  }
 
   aiSubmitButton.disabled = true;
   aiSubmitButton.textContent = "Asking…";

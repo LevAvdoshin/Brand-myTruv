@@ -257,6 +257,7 @@ button {
   flex-direction: column;
   gap: 56px;
   flex: 1;
+  margin: 2cm 0;
 }
 
 @media (max-width: 800px) {
@@ -577,7 +578,7 @@ button {
 }
 
 .ai-box {
-  margin: 4cm auto 36px;
+  margin: -1cm auto 36px;
   padding: 16px 18px;
   background: radial-gradient(circle at 16% 18%, rgba(37, 99, 235, 0.16), rgba(250, 253, 255, 0.98)),
     linear-gradient(140deg, rgba(255, 255, 255, 0.98), rgba(232, 242, 255, 0.92));
