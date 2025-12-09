@@ -582,7 +582,7 @@ button {
 }
 
 .ai-box {
-  margin: 0 auto 1cm;
+  margin: -1cm auto 1cm;
   padding: 16px 18px;
   background: radial-gradient(circle at 16% 18%, rgba(37, 99, 235, 0.16), rgba(250, 253, 255, 0.98)),
     linear-gradient(140deg, rgba(255, 255, 255, 0.98), rgba(232, 242, 255, 0.92));
