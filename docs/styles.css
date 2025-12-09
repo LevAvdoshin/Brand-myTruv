@@ -260,12 +260,42 @@ button {
 
 @media (max-width: 800px) {
   .hero {
-    grid-template-columns: 1fr;
+    padding: 80px 10px 80px;
   }
 
-  .hero-visual {
-    margin-top: 10px;
-    justify-self: stretch;
+  .hero-inner {
+    padding: 0;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .hero-buttons button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ai-box {
+    margin: 12px auto 24px;
+    padding: 12px;
+  }
+
+  .ai-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .ai-submit {
+    width: 100%;
+  }
+
+  .ai-switch-track {
+    width: 100%;
+    justify-content: center;
   }
 }
 
