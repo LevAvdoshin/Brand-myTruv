@@ -578,7 +578,7 @@ button {
 }
 
 .content {
-  padding: 22px 24px;
+  padding: 22px 10px;
 }
 
 .ai-box {
@@ -978,7 +978,7 @@ button {
 .doc-body {
   border: 1px solid var(--border);
   border-radius: 14px;
-  padding: 22px 24px 30px;
+  padding: 22px 10px 30px;
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(246, 249, 255, 0.9));
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
