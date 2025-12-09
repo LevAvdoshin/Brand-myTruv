@@ -95,7 +95,7 @@ const aiAnswer = document.getElementById("ai-answer");
 const aiSuggestionButtons = document.querySelectorAll("#ai-suggestions .chip");
 const aiModeToggle = document.getElementById("ai-mode-toggle");
 
-let activeDoc = docs[0];
+let activeDoc = null;
 let activeTopId;
 let headingObserver;
 let activeAiMode = "fast";
@@ -321,7 +321,7 @@ function normalizeHeading(text) {
   const finalText = stripped || "Section";
   const emojiPart = emojiMatch.join(" ");
   if (emojiPart) return `${finalText} ${emojiPart}`;
-  const topDocEmoji = docEmojis[activeDoc.id];
+  const topDocEmoji = activeDoc ? docEmojis[activeDoc.id] : "";
   return topDocEmoji ? `${finalText} ${topDocEmoji}` : finalText;
 }
 
@@ -656,7 +656,6 @@ footerLinks.forEach((link) => {
 });
 
 renderDocList();
-loadDoc(activeDoc.id, { fromUser: true });
 
 // Back to top
 const backToTop = document.getElementById("back-to-top");

@@ -310,9 +310,10 @@ button {
   box-shadow: none;
   background: linear-gradient(135deg, #0f1f4a, #0b3b9c);
   color: #e5ecff;
-  padding: 48px 24px 56px;
+  padding: 48px 24px calc(56px + 5cm);
   position: relative;
   overflow: hidden;
+  min-height: 360px;
 }
 
 .footer.panel::before,
@@ -576,7 +577,7 @@ button {
 }
 
 .ai-box {
-  margin: -80px auto 36px;
+  margin: 4cm auto 36px;
   padding: 16px 18px;
   background: radial-gradient(circle at 16% 18%, rgba(37, 99, 235, 0.16), rgba(250, 253, 255, 0.98)),
     linear-gradient(140deg, rgba(255, 255, 255, 0.98), rgba(232, 242, 255, 0.92));
