@@ -1184,7 +1184,7 @@ button {
   }
 
   .back-to-top {
-    display: none;
+    display: none !important;
   }
 
   .hero {
