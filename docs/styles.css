@@ -6,8 +6,8 @@ html {
   --bg: #eef2f9;
   --panel: rgba(255, 255, 255, 0.9);
   --panel-2: rgba(245, 248, 255, 0.8);
-  --text: #0b1c3f;
-  --muted: #4d5c78;
+  --text: #0f172a;
+  --muted: #4b5563;
   --accent: #1f4cd7;
   --accent-2: #1539a6;
   --border: #e2e7f2;
@@ -19,24 +19,14 @@ html {
   box-sizing: border-box;
 }
 
-.nowrap {
-  white-space: nowrap;
-}
-
 body {
   margin: 0;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(180deg, #fdfefe 0%, #eef4ff 55%, #0b3b9c 100%);
+  background: linear-gradient(180deg, #fdfefe 0%, #eef4ff 60%, #d8e8ff 100%);
   color: var(--text);
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Poppins", "Inter", "Helvetica Neue", Arial, sans-serif;
   line-height: 1.65;
-  padding: 32px 20px 0;
-}
-
-html, body {
-  height: 100%;
+  padding: 32px 20px 24px;
 }
 
 .page {
@@ -46,9 +36,8 @@ html, body {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  min-height: 100vh;
   padding-bottom: 0;
-  flex: 1;
 }
 
 .bg-glow {
@@ -60,7 +49,7 @@ html, body {
   border: none;
   border-radius: 0;
   box-shadow: none;
-  padding: 240px 6px 220px;
+  padding: 200px 6px 180px;
   margin-bottom: 12px;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
@@ -76,9 +65,9 @@ html, body {
 }
 
 h1 {
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Poppins", "Inter", "Helvetica Neue", Arial, sans-serif;
   margin: 4px 0 8px;
-  font-size: 44px;
+  font-size: 36px;
   letter-spacing: -0.02em;
 }
 
@@ -90,7 +79,7 @@ h1 {
 }
 
 h2 {
-  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Poppins", "Inter", "Helvetica Neue", Arial, sans-serif;
   margin: 6px 0;
   font-size: 26px;
   letter-spacing: -0.02em;
@@ -187,7 +176,7 @@ h2 {
   padding: 18px 20px;
   background: linear-gradient(135deg, #f0f4ff, #e7ecff);
   border: 1px solid #d8e2ff;
-  margin: 72px 0;
+  margin: 2cm 0;
 }
 
 .contact-inner {
@@ -295,16 +284,11 @@ button {
     padding: 12px;
   }
 
-  .ai-input-row {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
   .ai-actions {
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    margin-top: 24px;
+    margin-top: 16px;
   }
 
   .ai-submit {
@@ -320,18 +304,15 @@ button {
 .footer.panel {
   width: 100vw;
   margin: 0 calc(50% - 50vw);
-  margin-top: 0;
-  margin-bottom: -1px;
+  margin-top: 16px;
   border-radius: 0;
   border: none;
   box-shadow: none;
   background: linear-gradient(135deg, #0f1f4a, #0b3b9c);
   color: #e5ecff;
-  padding: 64px 24px 112px;
-  min-height: 320px;
+  padding: 48px 24px 56px;
   position: relative;
   overflow: hidden;
-  margin-top: auto;
 }
 
 .footer.panel::before,
@@ -595,7 +576,7 @@ button {
 }
 
 .ai-box {
-  margin: -96px auto 48px;
+  margin: -80px auto 36px;
   padding: 16px 18px;
   background: radial-gradient(circle at 16% 18%, rgba(37, 99, 235, 0.16), rgba(250, 253, 255, 0.98)),
     linear-gradient(140deg, rgba(255, 255, 255, 0.98), rgba(232, 242, 255, 0.92));
@@ -650,11 +631,7 @@ button {
   border: 1px solid #dfe4ef;
   background: rgba(255, 255, 255, 0.76);
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
-  color: #a6afc4;
-}
-
-.ai-key input::placeholder {
-  color: #b6bfd2;
+  color: #9aa3b5;
 }
 
 .key-label {
@@ -685,7 +662,7 @@ button {
   align-items: center;
   justify-content: flex-end;
   min-width: 240px;
-  margin-top: 8px;
+  margin-top: -36px;
   align-self: center;
 }
 

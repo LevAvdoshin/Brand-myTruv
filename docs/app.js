@@ -95,7 +95,7 @@ const aiAnswer = document.getElementById("ai-answer");
 const aiSuggestionButtons = document.querySelectorAll("#ai-suggestions .chip");
 const aiModeToggle = document.getElementById("ai-mode-toggle");
 
-let activeDoc = null;
+let activeDoc = docs[0];
 let activeTopId;
 let headingObserver;
 let activeAiMode = "fast";
@@ -114,11 +114,9 @@ const aiConfig = {
 };
 
 const aiModes = {
-  deep: { model: "gpt-5-pro-2025-10-06", label: "Deep (GPT-5 Pro)" },
-  fast: { model: "gpt-5.1", label: "Fast (GPT-5.1)" },
+  deep: { model: "gpt-5.1", label: "Deep (GPT-5.1)" },
+  fast: { model: "gpt-4.1", label: "Fast (GPT-4.1)" },
 };
-
-let allDocsText = "";
 
 function buildResponseInput(question, context) {
   const userText = `${question}\n\nContext (from current doc):\n${context || "No context loaded."}`;
@@ -126,23 +124,6 @@ function buildResponseInput(question, context) {
     { role: "system", content: [{ type: "input_text", text: aiConfig.system }] },
     { role: "user", content: [{ type: "input_text", text: userText }] },
   ];
-}
-
-async function loadAllDocsText() {
-  if (allDocsText) return allDocsText;
-  const parts = await Promise.all(
-    docs.map(async (doc) => {
-      try {
-        const res = await fetch(`${localBase}/${doc.file}`);
-        if (!res.ok) return "";
-        return await res.text();
-      } catch {
-        return "";
-      }
-    })
-  );
-  allDocsText = parts.filter(Boolean).join("\n\n").slice(0, 16000);
-  return allDocsText;
 }
 
 function extractResponseText(data) {
@@ -555,13 +536,7 @@ async function askAi() {
     return;
   }
 
-  let context = (docRoot?.textContent || "").trim().slice(0, 8000);
-  if (!context || context.length < 400) {
-    context = await loadAllDocsText();
-  } else {
-    const extra = await loadAllDocsText();
-    context = `${context}\n\nOther docs:\n${extra}`.slice(0, 16000);
-  }
+  const context = (docRoot?.textContent || "").trim().slice(0, 8000);
 
   aiSubmitButton.disabled = true;
   aiSubmitButton.textContent = "Asking…";
@@ -681,6 +656,7 @@ footerLinks.forEach((link) => {
 });
 
 renderDocList();
+loadDoc(activeDoc.id, { fromUser: true });
 
 // Back to top
 const backToTop = document.getElementById("back-to-top");
