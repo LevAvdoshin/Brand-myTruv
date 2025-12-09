@@ -95,7 +95,7 @@ const aiAnswer = document.getElementById("ai-answer");
 const aiSuggestionButtons = document.querySelectorAll("#ai-suggestions .chip");
 const aiModeToggle = document.getElementById("ai-mode-toggle");
 
-let activeDoc = null;
+let activeDoc = docs[0];
 let activeTopId;
 let headingObserver;
 let activeAiMode = "fast";
@@ -114,8 +114,8 @@ const aiConfig = {
 };
 
 const aiModes = {
-  deep: { model: "gpt-5-pro-2025-10-06", label: "Deep (GPT-5 Pro)" },
-  fast: { model: "gpt-5.1", label: "Fast (GPT-5.1)" },
+  deep: { model: "gpt-5.1", label: "Deep (GPT-5.1)" },
+  fast: { model: "gpt-4.1", label: "Fast (GPT-4.1)" },
 };
 
 function buildResponseInput(question, context) {
@@ -656,6 +656,7 @@ footerLinks.forEach((link) => {
 });
 
 renderDocList();
+loadDoc(activeDoc.id, { fromUser: true });
 
 // Back to top
 const backToTop = document.getElementById("back-to-top");
