@@ -1183,6 +1183,10 @@ button {
     padding: 18px 14px 32px;
   }
 
+  .back-to-top {
+    display: none;
+  }
+
   .hero {
     padding: 24px 22px;
   }
