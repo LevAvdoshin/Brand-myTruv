@@ -255,9 +255,13 @@ button {
 .layout {
   display: flex;
   flex-direction: column;
-  gap: 56px;
+  gap: 2cm;
   flex: 1;
   margin: 2cm 0;
+}
+
+.panel + .panel {
+  margin-top: 2cm;
 }
 
 @media (max-width: 800px) {
@@ -311,10 +315,10 @@ button {
   box-shadow: none;
   background: linear-gradient(135deg, #0f1f4a, #0b3b9c);
   color: #e5ecff;
-  padding: 48px 24px calc(56px + 5cm);
+  padding: 32px 24px 72px;
   position: relative;
   overflow: hidden;
-  min-height: 360px;
+  min-height: 200px;
 }
 
 .footer.panel::before,
@@ -578,7 +582,7 @@ button {
 }
 
 .ai-box {
-  margin: -1cm auto 36px;
+  margin: -3cm auto 36px;
   padding: 16px 18px;
   background: radial-gradient(circle at 16% 18%, rgba(37, 99, 235, 0.16), rgba(250, 253, 255, 0.98)),
     linear-gradient(140deg, rgba(255, 255, 255, 0.98), rgba(232, 242, 255, 0.92));
