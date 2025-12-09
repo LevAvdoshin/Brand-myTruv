@@ -1180,7 +1180,7 @@ button {
 
 @media (max-width: 640px) {
   body {
-    padding: 18px 14px 32px;
+    padding: 18px 14px 0;
   }
 
   .back-to-top {
